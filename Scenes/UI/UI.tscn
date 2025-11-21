@@ -18,6 +18,7 @@ script = ExtResource("2_b0ijr")
 [node name="PauseButton" type="TextureButton" parent="."]
 process_mode = 3
 z_index = 5
+layout_mode = 0
 offset_right = 104.0
 offset_bottom = 112.0
 mouse_default_cursor_shape = 2
@@ -25,6 +26,7 @@ texture_normal = ExtResource("3_akgwn")
 stretch_mode = 3
 
 [node name="WinButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1631.0
 offset_top = 26.0
 offset_right = 1997.0

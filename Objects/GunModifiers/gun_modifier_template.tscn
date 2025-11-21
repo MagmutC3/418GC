@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8l8nv4qt34w7"]
+
+[ext_resource type="Script" uid="uid://dfpj82p5s6qyx" path="res://Objects/GunModifiers/plunger.gd" id="1_sbjdq"]
+
+[node name="GunModifierTemplate" type="Node"]
+script = ExtResource("1_sbjdq")

@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/fox/szop_anim.png" id="5_8dr1w"]
 [ext_resource type="Script" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
 [ext_resource type="PackedScene" uid="uid://pqsjo278hyie" path="res://Objects/bullet.tscn" id="6_mo44t"]
-[ext_resource type="Texture2D" uid="uid://d1l4fabqcuwh7" path="res://images/fox/fox sit.png" id="9_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://ph813d63f86c" path="res://sfx/fox_bark.mp3" id="9_alk0q"]
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
 [ext_resource type="AudioStream" uid="uid://cht4kgoy5465y" path="res://sfx/footstep_grass_001.ogg" id="11_3b0tj"]
@@ -215,7 +214,10 @@ script = ExtResource("18_dq3o2")
 script = ExtResource("19_o7xpd")
 
 [node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
+<<<<<<< HEAD
 effect = ExtResource("23_irryd")
+=======
+>>>>>>> d63547f (wip)
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
@@ -225,6 +227,9 @@ script = ExtResource("20_iouyi")
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(50, 0)
 
+<<<<<<< HEAD
 [node name="ActiveEffects" type="Node" parent="."]
 
+=======
+>>>>>>> d63547f (wip)
 [connection signal="timeout" from="BarkTimeout" to="AnimationBehaviour" method="_on_bark_timeout"]

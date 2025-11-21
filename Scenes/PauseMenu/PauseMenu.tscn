@@ -1,11 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhdqb350icnjw"]
+[gd_scene load_steps=9 format=3 uid="uid://c1tqw0hrlac5g"]
 
-[ext_resource type="Theme" uid="uid://dhvsei0a7jp3j" path="res://GlobalTheme.tres" id="1_21hhr"]
+[ext_resource type="Theme" uid="uid://dhvsei0a7jp3j" path="res://GlobalTheme.tres" id="1_cny2t"]
 [ext_resource type="Script" uid="uid://3nlu8vj8im1i" path="res://Scenes/PauseMenu/pause_menu.gd" id="2_hi1ku"]
-[ext_resource type="Texture2D" uid="uid://vvhcuvpe7gwe" path="res://images/interface/postcard.png" id="3_6kduu"]
-[ext_resource type="PackedScene" uid="uid://clyrpedect8tq" path="res://Objects/VolumeSlider/VolumeSlider.tscn" id="4_456hk"]
-[ext_resource type="Texture2D" uid="uid://bj17qf5mwkp81" path="res://images/interface/button main menu - pressed.png" id="5_a67lc"]
-[ext_resource type="Texture2D" uid="uid://bmb6smidodtio" path="res://images/interface/button main menu.png" id="6_82e3t"]
+[ext_resource type="FontFile" uid="uid://d05yajp3iubii" path="res://fonts/SpaceGrotesk-Bold.ttf" id="4_r07j0"]
 
 [sub_resource type="Animation" id="Animation_rhvpn"]
 length = 0.001
@@ -47,7 +44,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_24hy8"]
-resource_name = "slide_out"
+resource_name = "start"
 length = 0.5
 step = 0.1
 tracks/0/type = "value"
@@ -90,25 +87,16 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pa7jw"]
 _data = {
 &"RESET": SubResource("Animation_rhvpn"),
-&"slide_out": SubResource("Animation_24hy8")
+&"start": SubResource("Animation_24hy8")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndkln"]
-texture = ExtResource("5_a67lc")
+[sub_resource type="InputEventAction" id="InputEventAction_dwmcf"]
+action = &"ui_accept"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_go1xn"]
-texture = ExtResource("5_a67lc")
+[sub_resource type="Shortcut" id="Shortcut_ui17c"]
+events = [SubResource("InputEventAction_dwmcf")]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og4nk"]
-texture = ExtResource("5_a67lc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsq5i"]
-texture = ExtResource("5_a67lc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88uen"]
-texture = ExtResource("6_82e3t")
-
-[node name="PauseMenu" type="Control" groups=["PAUSE_MENU"]]
+[node name="PauseMenu" type="Control"]
 process_mode = 3
 z_index = 10
 layout_mode = 3
@@ -117,8 +105,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("1_21hhr")
+theme = ExtResource("1_cny2t")
 script = ExtResource("2_hi1ku")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -133,8 +120,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.807843)
+mouse_filter = 1
+color = Color(0, 0, 0, 0.752941)
 
 [node name="CardControl" type="Control" parent="."]
 layout_mode = 1
@@ -150,91 +137,78 @@ offset_left = 131.0
 offset_top = 109.0
 offset_right = 1780.0
 offset_bottom = 973.0
-mouse_filter = 2
-texture = ExtResource("3_6kduu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BottomText" type="Label" parent="CardControl/Card"]
+[node name="Title" type="Label" parent="CardControl/Card"]
+modulate = Color(0.217701, 0.217701, 0.217701, 1)
 layout_mode = 0
-offset_left = 322.0
-offset_top = 62.0
-offset_right = 1334.0
-offset_bottom = 185.0
-theme = ExtResource("1_21hhr")
-theme_override_font_sizes/font_size = 64
-text = "Game paused"
+offset_left = 181.0
+offset_right = 1480.0
+offset_bottom = 103.0
+theme = ExtResource("1_cny2t")
+theme_override_fonts/font = ExtResource("4_r07j0")
+theme_override_font_sizes/font_size = 80
+text = "NAZWA GRY"
 horizontal_alignment = 1
 
-[node name="ControlsText" type="Label" parent="CardControl/Card"]
+[node name="ExtraText" type="Label" parent="CardControl/Card"]
 layout_mode = 0
-offset_left = 515.0
-offset_top = 276.0
-offset_right = 1126.0
-offset_bottom = 357.0
-theme = ExtResource("1_21hhr")
-text = "Controls: Arrows + Space or WASD + E"
+offset_left = 1173.0
+offset_top = 100.0
+offset_right = 1541.0
+offset_bottom = 206.0
+theme = ExtResource("1_cny2t")
+theme_override_font_sizes/font_size = 48
+text = "Control Scheme"
 horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CardControl/Card"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = 5.99997
-offset_right = 86.0
-offset_bottom = 168.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-theme_override_constants/separation = 40
-
-[node name="Music" type="Label" parent="CardControl/Card/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_21hhr")
-text = "music volume"
-horizontal_alignment = 1
-
-[node name="SliderMusic" parent="CardControl/Card/VBoxContainer/Music" instance=ExtResource("4_456hk")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 41.6666
-offset_bottom = 57.6666
-
-[node name="SFX" type="Label" parent="CardControl/Card/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_21hhr")
-text = "sfx volume"
-horizontal_alignment = 1
-
-[node name="SliderSFX" parent="CardControl/Card/VBoxContainer/SFX" instance=ExtResource("4_456hk")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 39.9999
-offset_bottom = 55.9999
-type = 1
-
-[node name="HSeparator" type="HSeparator" parent="CardControl/Card/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="CardControl/Card"]
 layout_mode = 0
-offset_left = 639.0
-offset_top = 691.0
-offset_right = 1005.0
-offset_bottom = 787.0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 566.0
+offset_bottom = 196.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxTexture_ndkln")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_go1xn")
-theme_override_styles/hover = SubResource("StyleBoxTexture_og4nk")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vsq5i")
-theme_override_styles/normal = SubResource("StyleBoxTexture_88uen")
-text = "Resume"
+shortcut = SubResource("Shortcut_ui17c")
+shortcut_in_tooltip = false
+text = "Resume
+"
 
-[connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_button_pressed"]
+[node name="MainMenuButton" type="Button" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 220.0
+offset_right = 566.0
+offset_bottom = 316.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+shortcut = SubResource("Shortcut_ui17c")
+shortcut_in_tooltip = false
+text = "Main Menu
+"
+
+[node name="ColorRect" type="ColorRect" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 1183.0
+offset_top = 163.0
+offset_right = 1533.0
+offset_bottom = 796.0
+color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+
+[node name="Label" type="Label" parent="CardControl/Card/ColorRect"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+text = "Controls go here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CardControl/Card/MainMenuButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CardControl/Card/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

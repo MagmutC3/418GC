@@ -1,7 +1,7 @@
 extends Control
 
 var showing: bool = false
-
+@onready var video_player = $AspectRatioContainer/Shadow
 func _ready():
 	add_to_group("PAUSE_MENU")
 
@@ -12,11 +12,14 @@ func toggle_menu(show: bool):
 		get_tree().paused = true
 		showing = true
 		AudioManager.Music.enable_low_pass()
+		video_player.stop()
+		video_player.play()
 	else:
 		hide()
 		get_tree().paused = false
 		showing = false
 		AudioManager.Music.disable_low_pass()
+		video_player.stop()
 		
 
 func _on_resume_button_pressed() -> void:

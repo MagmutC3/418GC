@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://l8x1lyakjk8h" path="res://Objects/Character/bark_behaviour.gd" id="2_8dr1w"]
 [ext_resource type="Script" uid="uid://cpdsvxpnjqrbf" path="res://Objects/Character/movement_behaviour.gd" id="3_parke"]
 [ext_resource type="Script" uid="uid://cs5wcgagx3fup" path="res://Objects/Character/animation_behaviour.gd" id="4_owoj8"]
-[ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/fox/szop_anim.png" id="5_8dr1w"]
+[ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/szop/szop_anim.png" id="5_8dr1w"]
 [ext_resource type="Script" uid="uid://q5jd8otjvcj1" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
 [ext_resource type="PackedScene" uid="uid://pqsjo278hyie" path="res://Objects/bullet.tscn" id="6_mo44t"]
 [ext_resource type="AudioStream" uid="uid://ph813d63f86c" path="res://sfx/fox_bark.mp3" id="9_alk0q"]

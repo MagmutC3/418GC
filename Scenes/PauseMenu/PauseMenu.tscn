@@ -162,7 +162,7 @@ theme = ExtResource("1_cny2t")
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("4_r07j0")
 theme_override_font_sizes/font_size = 80
-text = "NAZWA GRY"
+text = "TRASH METAL"
 horizontal_alignment = 1
 
 [node name="ExtraText" type="Label" parent="CardControl/Card"]

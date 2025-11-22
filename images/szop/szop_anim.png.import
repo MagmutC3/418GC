@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1l4fabqcuwh7"
-path="res://.godot/imported/fox sit.png-8f2eaffee5ca258d67673ec3ec514a18.ctex"
+uid="uid://c7kg6wif41i56"
+path="res://.godot/imported/szop_anim.png-e94e7d3fd7e4c9fc6f0b5218bc043d6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/fox/fox sit.png"
-dest_files=["res://.godot/imported/fox sit.png-8f2eaffee5ca258d67673ec3ec514a18.ctex"]
+source_file="res://images/szop/szop_anim.png"
+dest_files=["res://.godot/imported/szop_anim.png-e94e7d3fd7e4c9fc6f0b5218bc043d6f.ctex"]
 
 [params]
 

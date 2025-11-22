@@ -1,36 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://di51071gnb1ro"]
+[gd_scene load_steps=4 format=3 uid="uid://di51071gnb1ro"]
 
-[ext_resource type="Script" uid="uid://gdpi6bkrr5cd" path="res://Objects/Enemy/enemy.gd" id="1_s4hkw"]
 [ext_resource type="Script" uid="uid://ccp0mk11pc5nd" path="res://Objects/Enemy/movement_behaviour.gd" id="2_106yf"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4hkw"]
-load_path = "res://.godot/imported/test.png-aebf7f7cb9cfea774f75442021b07064.ctex"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s4hkw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_s4hkw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="3_8je80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_711mf"]
-size = Vector2(200, 200)
+size = Vector2(105, 103)
 
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_s4hkw")
-
-[node name="MovementBehaviour" type="Node" parent="."]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("2_106yf")
 
-[node name="EnemySprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(248.5, 7.999998)
-scale = Vector2(0.9158416, 1.5892857)
-sprite_frames = SubResource("SpriteFrames_s4hkw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(249, 12)
+position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_711mf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8je80")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

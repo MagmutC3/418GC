@@ -11,14 +11,14 @@
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
 [ext_resource type="AudioStream" uid="uid://cht4kgoy5465y" path="res://sfx/footstep_grass_001.ogg" id="11_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://c3c7cjm2af30g" path="res://sfx/footstep_grass_002.ogg" id="12_7nuro"]
-[ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://scripts/Workshop/weapon.gd" id="14_7nuro"]
-[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://scripts/Workshop/stock.gd" id="14_670m3"]
-[ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://scripts/Workshop/scope.gd" id="15_sav76"]
-[ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://scripts/Workshop/barrel.gd" id="16_670m3"]
-[ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://scripts/Workshop/attachment.gd" id="17_btp4e"]
+[ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://Scripts/Workshop/weapon.gd" id="14_7nuro"]
+[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/stock.gd" id="14_670m3"]
+[ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://Scripts/Workshop/scope.gd" id="15_sav76"]
+[ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://Scripts/Workshop/barrel.gd" id="16_670m3"]
+[ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://Scripts/Workshop/attachment.gd" id="17_btp4e"]
 [ext_resource type="PackedScene" uid="uid://c8l8nv4qt34w7" path="res://Objects/GunModifiers/gun_modifier_template.tscn" id="18_8vdmj"]
-[ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://scripts/Workshop/magazine.gd" id="19_o7xpd"]
-[ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://scripts/Workshop/trigger.gd" id="20_iouyi"]
+[ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://Scripts/Workshop/magazine.gd" id="19_o7xpd"]
+[ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://Scripts/Workshop/trigger.gd" id="20_iouyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_parke"]
 atlas = ExtResource("5_8dr1w")
@@ -125,8 +125,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3b0tj"]
-radius = 10.536395
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7xpd"]
+radius = 75.0
+height = 225.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sav76"]
 streams_count = 3
@@ -163,8 +164,9 @@ sprite_frames = SubResource("SpriteFrames_twgt0")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0.75)
-shape = SubResource("CircleShape2D_3b0tj")
+position = Vector2(10, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_o7xpd")
 
 [node name="BarkSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

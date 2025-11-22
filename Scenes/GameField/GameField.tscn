@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0p26cuq3mpnf" path="res://Objects/WorkshopPopup/WorkshopPopup.tscn" id="4_35sir"]
 [ext_resource type="PackedScene" uid="uid://dho5ccwrco3qp" path="res://Objects/Spawner/Spawner.tscn" id="5_eadpp"]
 [ext_resource type="Script" uid="uid://b5ou3sgknxmye" path="res://Objects/Spawner/spawner.gd" id="6_ejngd"]
-[ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemy/Enemy.tscn" id="6_o5okw"]
+[ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemies/SmallRubbish.tscn" id="6_o5okw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mfdk"]
 size = Vector2(125, 2281)

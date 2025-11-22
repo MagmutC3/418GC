@@ -138,10 +138,14 @@ stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(8, 8)
 =======
 collision_layer = 2
 >>>>>>> 5ed7c61 (effect stacking system)
+=======
+collision_layer = 2
+>>>>>>> 93b379669330bc31caa73d32b1151b9b967d6419
 script = ExtResource("1_3btn0")
 
 [node name="MovementBehaviour" type="Node" parent="."]

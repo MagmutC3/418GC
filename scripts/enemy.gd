@@ -4,6 +4,7 @@ class_name Enemy
 @export var health : float = 100
 @export var movementSpeed : float = 100
 @export_range(0,1,0.01) var dropChance : float
+@export var loot : PackedScene
 
 @onready var rng = RandomNumberGenerator.new()
 

@@ -1,34 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://di51071gnb1ro"]
+[gd_scene load_steps=9 format=3 uid="uid://di51071gnb1ro"]
 
-[ext_resource type="Texture2D" uid="uid://g4qt1nnr4hh5" path="res://images/enemies/worek_zwykly.png" id="3_106yf"]
 [ext_resource type="Script" uid="uid://ccepuxa4uksxv" path="res://Objects/Enemies/enemy_rubbish_small.gd" id="1_s4hkw"]
+[ext_resource type="Texture2D" uid="uid://g4qt1nnr4hh5" path="res://images/enemies/worek_zwykly.png" id="3_106yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_711mf"]
 size = Vector2(129, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_711mf"]
-atlas = ExtResource("2_8je80")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3d0v"]
-atlas = ExtResource("2_8je80")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lm85r"]
-atlas = ExtResource("2_8je80")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_23g6a"]
-atlas = ExtResource("2_8je80")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hm477"]
-atlas = ExtResource("2_8je80")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7xrw"]
-atlas = ExtResource("2_8je80")
-region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8je80"]
 atlas = ExtResource("3_106yf")
@@ -48,29 +24,6 @@ region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n0lrt"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_711mf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w3d0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lm85r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_23g6a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hm477")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7xrw")
-}],
-"loop": true,
-"name": &"bigguy",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8je80")

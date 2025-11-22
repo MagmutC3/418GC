@@ -1,30 +1,34 @@
 extends Node2D
 
-@export var entity: PackedScene
+@export var entity = []
 @export var quantity: int = 1
 @export var max_instances: int = 30
 
 var current_count: int = 0
+@onready var rng = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	rng.randomize()
 
 func spawn_player() -> void:
-	var e = entity.instantiate()
+	var e = entity[0].instantiate()
 	owner.add_child(e)
 	e.global_position = $".".global_position
 		
 func spawn_enemy() -> void:
 	for i in range(quantity):
+		var type : float = rng.randf_range(0,1)
+		var enemy_instance = null
+		if type <= 0.3:
+			enemy_instance = entity[1].instantiate()
+		else:
+			enemy_instance = entity[0].instantiate()
+		
 		if current_count >= max_instances:
 			return  # do not spawn more
-		
-		var enemy_instance = entity.instantiate()
-		enemy_instance.position = Vector2(randf() * 400, randf() * 300)
-		
-		# Optional: pass player reference
-		var players = get_tree().get_nodes_in_group("PLAYER")
-		if players.size() > 0:
-			enemy_instance.player = players[0]
-		
 		add_child(enemy_instance)
+		
+		enemy_instance.position = Vector2(randf() * 400, randf() * 300)
 		
 		# Track instances
 		current_count += 1

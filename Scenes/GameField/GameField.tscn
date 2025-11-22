@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu3p0gem72gkj"]
+[gd_scene load_steps=11 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
 [ext_resource type="PackedScene" uid="uid://rubpe83jcihs" path="res://Objects/Character/Character.tscn" id="2_l1733"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0p26cuq3mpnf" path="res://Objects/WorkshopPopup/WorkshopPopup.tscn" id="4_35sir"]
 [ext_resource type="PackedScene" uid="uid://dho5ccwrco3qp" path="res://Objects/Spawner/Spawner.tscn" id="5_eadpp"]
 [ext_resource type="Script" uid="uid://b5ou3sgknxmye" path="res://Objects/Spawner/spawner.gd" id="6_ejngd"]
+[ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemy/Enemy.tscn" id="6_o5okw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mfdk"]
 size = Vector2(125, 2281)
@@ -71,7 +72,7 @@ entity = ExtResource("2_l1733")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_eadpp")]
 position = Vector2(2606, 406)
-entity = ExtResource("2_l1733")
+entity = ExtResource("6_o5okw")
 quantity = 5
 
 [node name="Area2D" type="Area2D" parent="."]

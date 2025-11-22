@@ -25,18 +25,4 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_akgwn")
 stretch_mode = 3
 
-[node name="WinButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1631.0
-offset_top = 26.0
-offset_right = 1997.0
-offset_bottom = 122.0
-scale = Vector2(0.7, 0.7)
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-shortcut_in_tooltip = false
-text = "Click to win"
-
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]

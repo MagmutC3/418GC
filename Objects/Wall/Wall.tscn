@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8icd7nvpfair"]
+
+[ext_resource type="Texture2D" uid="uid://bj17qf5mwkp81" path="res://images/interface/button main menu - pressed.png" id="1_bkcia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcia"]
+size = Vector2(188, 793)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+texture = ExtResource("1_bkcia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_bkcia")

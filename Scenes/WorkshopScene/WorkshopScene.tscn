@@ -1,0 +1,339 @@
+[gd_scene load_steps=30 format=3 uid="uid://duirragwbew20"]
+
+[ext_resource type="Script" uid="uid://boxa72vh1wvii" path="res://Scenes/WorkshopScene/workshop_scene.gd" id="1_dqsnn"]
+[ext_resource type="Texture2D" uid="uid://xxubpkswwyc" path="res://images/workshop/kij/spikedBatAll.png" id="2_4fpca"]
+[ext_resource type="Texture2D" uid="uid://cuij1ukykqody" path="res://images/workshop/miotla/miotlaKolba.png" id="2_wg6jh"]
+[ext_resource type="Texture2D" uid="uid://heda4gt5ogd8" path="res://images/workshop/KITCHEN GUN/kitchenGunLufa.png" id="3_msrtk"]
+[ext_resource type="Texture2D" uid="uid://c5f4274ukdil" path="res://images/workshop/KITCHEN GUN/kitchenGunAll.png" id="3_tcuds"]
+[ext_resource type="Texture2D" uid="uid://clare3gbkj3tq" path="res://images/workshop/miotla/miotlaLufa.png" id="4_66lym"]
+[ext_resource type="Texture2D" uid="uid://gao0ahkylr4r" path="res://images/workshop/dmuchawa/dmuchawaLufa.png" id="5_1ks4h"]
+[ext_resource type="Texture2D" uid="uid://ba1byjdjq84kd" path="res://images/workshop/odkurzacz/odkurzaczLufa.png" id="6_p5iky"]
+[ext_resource type="Texture2D" uid="uid://c2vdaogjr3nq5" path="res://images/workshop/przepychaczka/plungerLufa.png" id="7_6x0rr"]
+[ext_resource type="Texture2D" uid="uid://da4jmpvcb7hxv" path="res://images/workshop/roomba/roombaAttach.png" id="8_cgeje"]
+[ext_resource type="Texture2D" uid="uid://2jums8i7d7lr" path="res://images/workshop/roomba/roombaMain.png" id="8_esivq"]
+[ext_resource type="Texture2D" uid="uid://qa6alwplld8p" path="res://images/workshop/miotla/miotlaCelownik.png" id="10_6x0rr"]
+[ext_resource type="Texture2D" uid="uid://d2ptil6q001it" path="res://images/workshop/dmuchawa/dmuchawaCelownik.png" id="12_cgeje"]
+[ext_resource type="Texture2D" uid="uid://bhp73pgs35cip" path="res://images/workshop/przepychaczka/plungerCelownik.png" id="13_pjqk5"]
+[ext_resource type="Texture2D" uid="uid://dp75cv0fvxl1u" path="res://images/workshop/odkurzacz/odkurzaczCelownik.png" id="14_dy1x5"]
+[ext_resource type="Texture2D" uid="uid://dmu4ptt8681ce" path="res://images/workshop/dmuchawa/dmuchawaAttach.png" id="15_kjeww"]
+[ext_resource type="Texture2D" uid="uid://b461o46jlttdt" path="res://images/workshop/miotla/miotlaAttach.png" id="16_pwj1d"]
+[ext_resource type="Texture2D" uid="uid://8t0u3xirsagg" path="res://images/workshop/odkurzacz/odkurzaczAttach.png" id="17_6d76j"]
+[ext_resource type="Texture2D" uid="uid://bmvlatl8m10hs" path="res://images/workshop/przepychaczka/plungerAttach.png" id="18_3xjra"]
+[ext_resource type="Texture2D" uid="uid://ccpvoexitxxup" path="res://images/workshop/dmuchawa/dmuchawaKolba.png" id="20_7ie71"]
+[ext_resource type="Texture2D" uid="uid://dmse36wnnfsk4" path="res://images/workshop/przepychaczka/plungerMain.png" id="21_mq1ar"]
+[ext_resource type="Texture2D" uid="uid://c15atmbxjdaf4" path="res://images/workshop/odkurzacz/odkurzaczKolba.png" id="22_a5uwn"]
+[ext_resource type="Texture2D" uid="uid://dyc4dmo0swx8" path="res://images/workshop/dmuchawa/magazynekDmuchawa.png" id="23_25267"]
+[ext_resource type="Texture2D" uid="uid://d21kehlwwgyr4" path="res://images/workshop/przepychaczka/plungerMagazynekSpust.png" id="24_esivq"]
+[ext_resource type="Texture2D" uid="uid://chxfdqxuj2a50" path="res://images/workshop/miotla/miotlaMagazynekSpust.png" id="25_srqrq"]
+[ext_resource type="Texture2D" uid="uid://dsq7at5iu5wfn" path="res://images/workshop/odkurzacz/odkurzaczMagazynek.png" id="26_swx7r"]
+[ext_resource type="Texture2D" uid="uid://dheq8crhxj1li" path="res://images/workshop/dmuchawa/spustDmuchawa.png" id="27_prjoc"]
+[ext_resource type="Texture2D" uid="uid://1mcp7pbg7lns" path="res://images/workshop/odkurzacz/odkurzaczSpust.png" id="28_ei5oa"]
+[ext_resource type="Texture2D" uid="uid://bsggs7pgem1s6" path="res://images/workshop/kij/spustKolce.png" id="29_cdorr"]
+
+[node name="WorkshopScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dqsnn")
+
+[node name="CardControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Card" type="TextureRect" parent="CardControl"]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1085.0
+
+[node name="ReturnButton" type="Button" parent="CardControl/Card"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -292.0
+offset_right = 292.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Return to the Arena"
+
+[node name="SavedWeapons" type="Control" parent="CardControl/Card"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CardControl/Card/SavedWeapons"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 134.0
+offset_right = 423.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 50
+text = "Weapons"
+
+[node name="SavedWeapon1" type="Button" parent="CardControl/Card/SavedWeapons"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 92.0
+offset_right = 801.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 40
+text = "Saved Weapon #1"
+
+[node name="SavedWeapon2" type="Button" parent="CardControl/Card/SavedWeapons"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 92.0
+offset_right = 1201.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 40
+text = "Saved Weapon #2"
+
+[node name="SavedWeapon3" type="Button" parent="CardControl/Card/SavedWeapons"]
+layout_mode = 0
+offset_left = 1250.0
+offset_top = 92.0
+offset_right = 1601.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 40
+text = "Saved Weapon #3"
+
+[node name="BarrelChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 532.0
+offset_right = 502.0
+offset_bottom = 666.0
+item_count = 7
+popup/item_0/text = "Spiked Bat"
+popup/item_0/icon = ExtResource("2_4fpca")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_msrtk")
+popup/item_1/id = 1
+popup/item_2/text = "Broom"
+popup/item_2/icon = ExtResource("4_66lym")
+popup/item_2/id = 2
+popup/item_3/text = "Leaf blower"
+popup/item_3/icon = ExtResource("5_1ks4h")
+popup/item_3/id = 3
+popup/item_4/text = "Vacuum cleaner"
+popup/item_4/icon = ExtResource("6_p5iky")
+popup/item_4/id = 4
+popup/item_5/text = "Plunger"
+popup/item_5/icon = ExtResource("7_6x0rr")
+popup/item_5/id = 5
+popup/item_6/text = "Robot vacuuum"
+popup/item_6/icon = ExtResource("8_esivq")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/BarrelChoice"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = -50.0
+offset_right = 152.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 40
+text = "Barrel"
+
+[node name="CrosshairChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 296.0
+offset_right = 667.0
+offset_bottom = 430.0
+item_count = 7
+popup/item_0/text = "Broom"
+popup/item_0/icon = ExtResource("10_6x0rr")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_tcuds")
+popup/item_1/id = 1
+popup/item_2/text = "Leaf blower"
+popup/item_2/icon = ExtResource("12_cgeje")
+popup/item_2/id = 2
+popup/item_3/text = "Plunger"
+popup/item_3/icon = ExtResource("13_pjqk5")
+popup/item_3/id = 3
+popup/item_4/text = "Vacuum"
+popup/item_4/icon = ExtResource("14_dy1x5")
+popup/item_4/id = 4
+popup/item_5/text = "Robot vacuum"
+popup/item_5/icon = ExtResource("8_cgeje")
+popup/item_5/id = 5
+popup/item_6/text = "Bat"
+popup/item_6/icon = ExtResource("2_4fpca")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/CrosshairChoice"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -50.0
+offset_right = 189.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 40
+text = "Crosshair"
+
+[node name="AttachementChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 813.0
+offset_right = 695.0
+offset_bottom = 947.0
+item_count = 7
+popup/item_0/text = "Blower"
+popup/item_0/icon = ExtResource("15_kjeww")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_tcuds")
+popup/item_1/id = 1
+popup/item_2/text = "Robot vacuum"
+popup/item_2/icon = ExtResource("8_cgeje")
+popup/item_2/id = 2
+popup/item_3/text = "Broom"
+popup/item_3/icon = ExtResource("16_pwj1d")
+popup/item_3/id = 3
+popup/item_4/text = "Vacuum"
+popup/item_4/icon = ExtResource("17_6d76j")
+popup/item_4/id = 4
+popup/item_5/text = "Plunger"
+popup/item_5/icon = ExtResource("18_3xjra")
+popup/item_5/id = 5
+popup/item_6/text = "Bat"
+popup/item_6/icon = ExtResource("2_4fpca")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/AttachementChoice"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 222.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 40
+text = "Attachement"
+
+[node name="StockChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 296.0
+offset_right = 1375.0
+offset_bottom = 430.0
+item_count = 7
+popup/item_0/text = "Broom"
+popup/item_0/icon = ExtResource("2_wg6jh")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_tcuds")
+popup/item_1/id = 1
+popup/item_2/text = "Leaf blower"
+popup/item_2/icon = ExtResource("20_7ie71")
+popup/item_2/id = 2
+popup/item_3/text = "Plunger"
+popup/item_3/icon = ExtResource("21_mq1ar")
+popup/item_3/id = 3
+popup/item_4/text = "Robot vacuum"
+popup/item_4/icon = ExtResource("8_cgeje")
+popup/item_4/id = 4
+popup/item_5/text = "Vacuum"
+popup/item_5/icon = ExtResource("22_a5uwn")
+popup/item_5/id = 5
+popup/item_6/text = "Bat"
+popup/item_6/icon = ExtResource("2_4fpca")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/StockChoice"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = -50.0
+offset_right = 152.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 40
+text = "Stock"
+
+[node name="MagazineChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 495.0
+offset_right = 1603.0
+offset_bottom = 629.0
+item_count = 7
+popup/item_0/text = "Leaf blower"
+popup/item_0/icon = ExtResource("23_25267")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_tcuds")
+popup/item_1/id = 1
+popup/item_2/text = "Plunger"
+popup/item_2/icon = ExtResource("24_esivq")
+popup/item_2/id = 2
+popup/item_3/text = "Broom"
+popup/item_3/icon = ExtResource("25_srqrq")
+popup/item_3/id = 3
+popup/item_4/text = "Vacuum"
+popup/item_4/icon = ExtResource("26_swx7r")
+popup/item_4/id = 4
+popup/item_5/text = "Robot vacuum"
+popup/item_5/icon = ExtResource("8_cgeje")
+popup/item_5/id = 5
+popup/item_6/text = "Bat"
+popup/item_6/icon = ExtResource("2_4fpca")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/MagazineChoice"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -46.0
+offset_right = 179.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 40
+text = "Magazine"
+
+[node name="TriggerChoice" type="OptionButton" parent="CardControl/Card"]
+layout_mode = 0
+offset_left = 1177.0
+offset_top = 779.0
+offset_right = 1372.0
+offset_bottom = 913.0
+item_count = 7
+popup/item_0/text = "Plunger"
+popup/item_0/icon = ExtResource("24_esivq")
+popup/item_0/id = 0
+popup/item_1/text = "Kitchen Gun"
+popup/item_1/icon = ExtResource("3_tcuds")
+popup/item_1/id = 1
+popup/item_2/text = "Broom"
+popup/item_2/icon = ExtResource("25_srqrq")
+popup/item_2/id = 2
+popup/item_3/text = "Leaf blower"
+popup/item_3/icon = ExtResource("27_prjoc")
+popup/item_3/id = 3
+popup/item_4/text = "Vacuum"
+popup/item_4/icon = ExtResource("28_ei5oa")
+popup/item_4/id = 4
+popup/item_5/text = "Bat"
+popup/item_5/icon = ExtResource("29_cdorr")
+popup/item_5/id = 5
+popup/item_6/text = "Robot vacuum"
+popup/item_6/icon = ExtResource("8_cgeje")
+popup/item_6/id = 6
+
+[node name="Label" type="Label" parent="CardControl/Card/TriggerChoice"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = -50.0
+offset_right = 152.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 40
+text = "Trigger"
+
+[connection signal="pressed" from="CardControl/Card/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="item_selected" from="CardControl/Card/BarrelChoice" to="." method="_on_barrel_choice_item_selected"]
+[connection signal="item_selected" from="CardControl/Card/CrosshairChoice" to="." method="_on_crosshair_choice_item_selected"]
+[connection signal="item_selected" from="CardControl/Card/AttachementChoice" to="." method="_on_attachement_choice_item_selected"]
+[connection signal="item_selected" from="CardControl/Card/StockChoice" to="." method="_on_stock_choice_item_selected"]
+[connection signal="item_selected" from="CardControl/Card/MagazineChoice" to="." method="_on_magazine_choice_item_selected"]
+[connection signal="item_selected" from="CardControl/Card/TriggerChoice" to="." method="_on_trigger_choice_item_selected"]

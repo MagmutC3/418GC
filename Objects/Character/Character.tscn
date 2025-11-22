@@ -191,32 +191,32 @@ script = ExtResource("14_7nuro")
 [node name="Scope" type="Node" parent="Weapon"]
 script = ExtResource("15_sav76")
 
-[node name="SpikeModifier" parent="Weapon/Scope" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Scope" instance=ExtResource("14_o7xpd")]
 
 [node name="Barrel" type="Node" parent="Weapon"]
 script = ExtResource("16_670m3")
 
-[node name="SpikeModifier" parent="Weapon/Barrel" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Barrel" instance=ExtResource("14_o7xpd")]
 
 [node name="Attachment" type="Node" parent="Weapon"]
 script = ExtResource("17_btp4e")
 
-[node name="SpikeModifier" parent="Weapon/Attachment" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Attachment" instance=ExtResource("14_o7xpd")]
 
 [node name="Stock" type="Node" parent="Weapon"]
 script = ExtResource("14_670m3")
 
-[node name="SpikeModifier" parent="Weapon/Stock" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Stock" instance=ExtResource("14_o7xpd")]
 
 [node name="Magazine" type="Node" parent="Weapon"]
 script = ExtResource("19_o7xpd")
 
-[node name="SpikeModifier" parent="Weapon/Magazine" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Magazine" instance=ExtResource("14_o7xpd")]
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
 
-[node name="SpikeModifier" parent="Weapon/Trigger" instance=ExtResource("14_iouyi")]
+[node name="KitchenGunModifier" parent="Weapon/Trigger" instance=ExtResource("14_o7xpd")]
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(100, 0)

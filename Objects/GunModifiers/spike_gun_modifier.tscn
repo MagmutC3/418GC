@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bafpelpmbv1qc" path="res://Objects/Effects/spike_knockback.tscn" id="2_2bip6"]
 [ext_resource type="PackedScene" uid="uid://sa7oa52varue" path="res://Objects/Effects/spike_active_knockback.tscn" id="3_btcfk"]
 
-[node name="SpikeModifier" type="Node"]
+[node name="SpikeModifier" type="Node2D"]
 script = ExtResource("1_2xvpk")
 scopeEffect = ExtResource("2_2bip6")
 attachmentEffect = ExtResource("3_btcfk")

@@ -4,10 +4,13 @@ class_name Bullet
 var speed = 700
 var damage = 1
 var onHits = []
+var onProcess = []
 
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
+	for effect in onProcess:
+		effect.call(self)
 
 func _on_Bullet_body_entered(hit):
 	if hit.is_in_group("ENEMY"):

@@ -1,5 +1,5 @@
 @abstract
-extends Node
+extends Node2D
 class_name GunModifier
 
 @abstract func scope_effect(instance : Bullet)

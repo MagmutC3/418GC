@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://df1opmyp7qa8u"]
+
+[ext_resource type="Script" uid="uid://bmtaan8yb87ho" path="res://Objects/GunModifiers/spike_gun_modifier.gd" id="1_2xvpk"]
+[ext_resource type="PackedScene" uid="uid://bafpelpmbv1qc" path="res://Objects/Effects/spike_knockback.tscn" id="2_2bip6"]
+[ext_resource type="PackedScene" uid="uid://sa7oa52varue" path="res://Objects/Effects/spike_active_knockback.tscn" id="3_btcfk"]
+
+[node name="SpikeModifier" type="Node2D"]
+script = ExtResource("1_2xvpk")
+scopeEffect = ExtResource("2_2bip6")
+attachmentEffect = ExtResource("3_btcfk")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://sa7oa52varue"]
+
+[ext_resource type="Script" uid="uid://d0d0pkq4sboca" path="res://Objects/Effects/spike_active_knockback.gd" id="1_diep1"]
+[ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="1_qw4yd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_diep1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qw4yd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdud1"]
+radius = 160.0
+
+[node name="SpikeActiveKnockback" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_diep1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_diep1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sdud1")
+
+[connection signal="body_entered" from="." to="." method="on_enter"]

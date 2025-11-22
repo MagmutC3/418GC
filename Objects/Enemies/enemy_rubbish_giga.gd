@@ -3,7 +3,10 @@ extends Enemy
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 var player: Node2D
+var push: Vector2 = Vector2(0,0)
+
 func _ready() -> void:
+	super()
 	sprite.play("default")
 	# Find player through group
 	var players = get_tree().get_nodes_in_group("PLAYER")
@@ -30,8 +33,14 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = (next_point - global_position).normalized()
 	
 	# Movement
-	velocity = direction * movementSpeed
+	if push:
+		velocity = push
+		push = Vector2(0,0)
+	else:
+		velocity += direction * movementSpeed
 	move_and_slide()
+
+	velocity *= 0.7
 
 	# Rotate toward movement direction
 	if velocity.length() > 1:

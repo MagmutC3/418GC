@@ -11,14 +11,14 @@
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
 [ext_resource type="AudioStream" uid="uid://cht4kgoy5465y" path="res://sfx/footstep_grass_001.ogg" id="11_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://c3c7cjm2af30g" path="res://sfx/footstep_grass_002.ogg" id="12_7nuro"]
-[ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://scripts/Workshop/weapon.gd" id="14_7nuro"]
-[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://scripts/Workshop/stock.gd" id="14_670m3"]
-[ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://scripts/Workshop/scope.gd" id="15_sav76"]
-[ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://scripts/Workshop/barrel.gd" id="16_670m3"]
-[ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://scripts/Workshop/attachment.gd" id="17_btp4e"]
-[ext_resource type="PackedScene" uid="uid://c8l8nv4qt34w7" path="res://Objects/GunModifiers/gun_modifier_template.tscn" id="18_8vdmj"]
-[ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://scripts/Workshop/magazine.gd" id="19_o7xpd"]
-[ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://scripts/Workshop/trigger.gd" id="20_iouyi"]
+[ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://Scripts/Workshop/weapon.gd" id="14_7nuro"]
+[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/stock.gd" id="14_670m3"]
+[ext_resource type="PackedScene" uid="uid://dd3gvfyoboyxs" path="res://Objects/GunModifiers/kitchen_gun_modifier.tscn" id="14_o7xpd"]
+[ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://Scripts/Workshop/scope.gd" id="15_sav76"]
+[ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://Scripts/Workshop/barrel.gd" id="16_670m3"]
+[ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://Scripts/Workshop/attachment.gd" id="17_btp4e"]
+[ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://Scripts/Workshop/magazine.gd" id="19_o7xpd"]
+[ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://Scripts/Workshop/trigger.gd" id="20_iouyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_parke"]
 atlas = ExtResource("5_8dr1w")
@@ -136,7 +136,7 @@ stream_1/stream = ExtResource("11_3b0tj")
 stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_3btn0")
 
 [node name="MovementBehaviour" type="Node" parent="."]
@@ -191,36 +191,37 @@ script = ExtResource("14_7nuro")
 [node name="Scope" type="Node" parent="Weapon"]
 script = ExtResource("15_sav76")
 
-[node name="GunModifierTemplate" parent="Weapon/Scope" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Scope" instance=ExtResource("14_o7xpd")]
 
 [node name="Barrel" type="Node" parent="Weapon"]
 script = ExtResource("16_670m3")
 
-[node name="GunModifierTemplate" parent="Weapon/Barrel" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Barrel" instance=ExtResource("14_o7xpd")]
 
 [node name="Attachment" type="Node" parent="Weapon"]
 script = ExtResource("17_btp4e")
 
-[node name="GunModifierTemplate" parent="Weapon/Attachment" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Attachment" instance=ExtResource("14_o7xpd")]
 
 [node name="Stock" type="Node" parent="Weapon"]
 script = ExtResource("14_670m3")
 
-[node name="GunModifierTemplate" parent="Weapon/Stock" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Stock" instance=ExtResource("14_o7xpd")]
 
 [node name="Magazine" type="Node" parent="Weapon"]
 script = ExtResource("19_o7xpd")
 
-[node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Magazine" instance=ExtResource("14_o7xpd")]
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
 
-[node name="GunModifierTemplate" parent="Weapon/Trigger" instance=ExtResource("18_8vdmj")]
+[node name="KitchenGunModifier" parent="Weapon/Trigger" instance=ExtResource("14_o7xpd")]
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(100, 0)
 
-[node name="ActiveEffects" type="Node" parent="."]
+[node name="ActiveEffects" type="Node2D" parent="."]
 
 [node name="Bullets" type="Node" parent="."]
 

@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="3_8je80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_711mf"]
-size = Vector2(200, 200)
+size = Vector2(105, 103)
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("2_106yf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(249, 12)
+position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_711mf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

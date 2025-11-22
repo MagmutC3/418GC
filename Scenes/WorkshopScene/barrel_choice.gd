@@ -1,9 +1,0 @@
-extends OptionButton
-
-signal barrel_spiked_bat
-signal barrel_kitchen_gun
-signal barrel_broom
-signal barrel_leaf_blower
-signal barrel_vacuum_cleaner
-signal barrel_plunger
-signal barrel_robot_vacuum

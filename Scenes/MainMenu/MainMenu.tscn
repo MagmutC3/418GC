@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg0io0m1wcmd7"]
+[gd_scene load_steps=15 format=3 uid="uid://dg0io0m1wcmd7"]
 
 [ext_resource type="Theme" uid="uid://dhvsei0a7jp3j" path="res://GlobalTheme.tres" id="1_enjhb"]
 [ext_resource type="Script" uid="uid://lh6xedgmm6cc" path="res://Scenes/MainMenu/main_menu.gd" id="2_wgsk1"]
+[ext_resource type="Texture2D" uid="uid://cst5l3nikk368" path="res://images/interface/aeugh.png" id="3_fv0xt"]
 [ext_resource type="FontFile" uid="uid://d05yajp3iubii" path="res://fonts/SpaceGrotesk-Bold.ttf" id="4_kpx3y"]
 [ext_resource type="Texture2D" uid="uid://cwlk76wvhkr8t" path="res://images/interface/STARTBUTTON.png" id="4_vapy7"]
 [ext_resource type="Texture2D" uid="uid://4eybmh3oaq4y" path="res://images/interface/resetBUTTON.png" id="5_8qovt"]
@@ -127,6 +128,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0, 0, 0, 0.752941)
+
+[node name="TextureRect" type="ParallaxBackground" parent="Shadow"]
+scroll_ignore_camera_zoom = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="Parallax2D" parent="Shadow/TextureRect"]
+texture_filter = 1
+repeat_size = Vector2(1483.87, 868.095)
+autoscroll = Vector2(50, 20)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Shadow/TextureRect/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 1993.0
+offset_bottom = 1125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fv0xt")
 
 [node name="CardControl" type="Control" parent="."]
 layout_mode = 1

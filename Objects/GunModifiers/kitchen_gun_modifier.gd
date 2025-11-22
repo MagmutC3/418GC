@@ -21,7 +21,8 @@ func scopeEffect(_instance : Bullet):
 	_instance.look_at(get_global_mouse_position())
 
 func scope_effect(_instance : Bullet):
-	#_instance.onProcess.append(scopeEffect)
+	await get_tree().create_timer(0.5).timeout
+	_instance.onProcess.append(scopeEffect)
 	pass
 
 func barrel_effect(_instance : Bullet):
@@ -30,6 +31,8 @@ func barrel_effect(_instance : Bullet):
 	e.global_rotation += 10.0/180*PI
 	e.speed = _instance.speed
 	e.onHits = _instance.onHits
+	e.damage = _instance.damage
+	e.onProcess = _instance.onProcess
 	pass
 
 func attachment_effect(_instance : Bullet):
@@ -38,6 +41,8 @@ func attachment_effect(_instance : Bullet):
 	e.global_rotation -= 10.0/180*PI
 	e.speed = _instance.speed
 	e.onHits = _instance.onHits
+	e.damage = _instance.damage
+	e.onProcess = _instance.onProcess
 	pass
 
 func stock_effect(_instance : Bullet):
@@ -46,6 +51,8 @@ func stock_effect(_instance : Bullet):
 	e.global_rotation += PI
 	e.speed = _instance.speed
 	e.onHits = _instance.onHits
+	e.damage = _instance.damage
+	e.onProcess = _instance.onProcess
 	pass
 
 func magazine_effect(_instance : Bullet):
@@ -58,5 +65,7 @@ func trigger_effect(_instance : Bullet):
 		_instance.add_sibling(e)
 		e.global_rotation += 2.0 * i / 7 * PI
 		e.speed = _instance.speed
+		e.damage = _instance.damage
 		e.onHits = _instance.onHits
+		e.onProcess = _instance.onProcess
 	pass

@@ -12,10 +12,12 @@ func _physics_process(delta):
 	for effect in onProcess:
 		effect.call(self)
 
-func _on_Bullet_body_entered(hit):
-	if hit.is_in_group("ENEMY"):
-		hit.take_damage(damage)
+func take_damage(hit, _instance : Bullet):
+	hit.take_damage(damage) 
+	queue_free()
 
+func _on_Bullet_body_entered(hit):
+	onHits.append(take_damage)
+	if hit.is_in_group("ENEMY"):
 		for effect in onHits:
 			effect.call(hit, self)
-	queue_free()

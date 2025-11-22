@@ -17,17 +17,13 @@ extends GunModifier
 #bullet effect
 	#add child to Bullet's instance
 
-func on_hit_example(hit, _instance : Bullet):
-	print(hit)
-
 func scope_effect(_instance : Bullet):
 	#this is an example of a instant effect
 	_instance.speed += 1000
 	pass
 
 func barrel_effect(_instance : Bullet):
-	#this is an example of an on hit effect
-	_instance.onHits.append(on_hit_example)
+	_instance.onHits.clear()
 	pass
 
 func attachment_effect(_instance : Bullet):
@@ -37,7 +33,6 @@ func attachment_effect(_instance : Bullet):
 	e.global_rotation += 10.0/360*PI
 	e.speed = _instance.speed
 	e.onHits = _instance.onHits
-	e.onProcess = _instance.onProcess
 	pass
 
 var constantEffectAdded = false

@@ -20,14 +20,14 @@ extends GunModifier
 @export var scopeEffect : PackedScene
 func scope_effect(_instance : Bullet):
 	var e = scopeEffect.instantiate()
-	#dd_child(e)
+	add_child(e)
 	e.global_transform = _instance.global_transform
 	pass
 
 
 func barrel_effect(_instance : Bullet):
-	#_instance.speed = 1
-	#_instance.apply_scale(Vector2(3,3))
+	_instance.speed = 1
+	_instance.apply_scale(Vector2(3,3))
 	pass
 
 @export var attachmentEffect : PackedScene
@@ -41,7 +41,7 @@ func attachment_effect(_instance : Bullet):
 		
 func stock_effect(_instance : Bullet):
 	var e = scopeEffect.instantiate()
-	#add_child(e)
+	add_child(e)
 	e.global_transform = _instance.global_transform
 	e.rotation += PI 
 	pass
@@ -50,6 +50,10 @@ func magazineEffect(hit, _instance : Bullet):
 	if hit.health <= 0:
 		var e = _instance.duplicate()
 		_instance.add_sibling(e)
+		e.speed = _instance.speed
+		e.onHits = _instance.onHits
+		e.damage = _instance.damage
+		e.onProcess = _instance.onProcess
 
 func magazine_effect(_instance : Bullet):
 	_instance.onHits.append(magazineEffect)

@@ -9,7 +9,7 @@ func _process(_delta) -> void:
 func shoot():
 	var b = bullet.instantiate()
 	
-	owner.owner.add_child(b)
+	owner.add_sibling(b)
 	b.global_transform = get_node("../BulletSpawnPoint").global_transform
 	
 	get_node("../Weapon").shoot(b)

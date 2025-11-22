@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bexypihhqifh4"]
+
+[ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="1_856bj"]
+[ext_resource type="Script" uid="uid://yv885lgihg71" path="res://Objects/Effects/example_constant_effect.gd" id="2_dr42e"]
+
+[node name="ExampleConstantEffect" type="Sprite2D"]
+texture = ExtResource("1_856bj")
+script = ExtResource("2_dr42e")

@@ -1,12 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://rubpe83jcihs"]
+[gd_scene load_steps=28 format=3 uid="uid://rubpe83jcihs"]
 
 [ext_resource type="Script" uid="uid://ccw5xj3khfeb4" path="res://Objects/Character/character.gd" id="1_3btn0"]
 [ext_resource type="Script" uid="uid://l8x1lyakjk8h" path="res://Objects/Character/bark_behaviour.gd" id="2_8dr1w"]
 [ext_resource type="Script" uid="uid://cpdsvxpnjqrbf" path="res://Objects/Character/movement_behaviour.gd" id="3_parke"]
 [ext_resource type="Script" uid="uid://cs5wcgagx3fup" path="res://Objects/Character/animation_behaviour.gd" id="4_owoj8"]
 [ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/fox/szop_anim.png" id="5_8dr1w"]
-[ext_resource type="Script" uid="uid://q5jd8otjvcj1" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
-[ext_resource type="PackedScene" uid="uid://c8bt6ln4hhyin" path="res://Objects/bullet.tscn" id="6_mo44t"]
+[ext_resource type="Script" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
+[ext_resource type="PackedScene" uid="uid://pqsjo278hyie" path="res://Objects/bullet.tscn" id="6_mo44t"]
 [ext_resource type="Texture2D" uid="uid://d1l4fabqcuwh7" path="res://images/fox/fox sit.png" id="9_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://ph813d63f86c" path="res://sfx/fox_bark.mp3" id="9_alk0q"]
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/butt.gd" id="18_dq3o2"]
 [ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://Scripts/Workshop/magazine.gd" id="19_o7xpd"]
 [ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://Scripts/Workshop/trigger.gd" id="20_iouyi"]
+[ext_resource type="PackedScene" uid="uid://bexypihhqifh4" path="res://Objects/Effects/example_constant_effect.tscn" id="23_irryd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_parke"]
 atlas = ExtResource("5_8dr1w")
@@ -136,7 +137,11 @@ stream_1/stream = ExtResource("11_3b0tj")
 stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
+<<<<<<< HEAD
 scale = Vector2(8, 8)
+=======
+collision_layer = 2
+>>>>>>> 5ed7c61 (effect stacking system)
 script = ExtResource("1_3btn0")
 
 [node name="MovementBehaviour" type="Node" parent="."]
@@ -210,6 +215,7 @@ script = ExtResource("18_dq3o2")
 script = ExtResource("19_o7xpd")
 
 [node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
+effect = ExtResource("23_irryd")
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
@@ -218,5 +224,7 @@ script = ExtResource("20_iouyi")
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(50, 0)
+
+[node name="ActiveEffects" type="Node" parent="."]
 
 [connection signal="timeout" from="BarkTimeout" to="AnimationBehaviour" method="_on_bark_timeout"]

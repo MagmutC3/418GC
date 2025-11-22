@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1tyhwpwxfr5t"
-path="res://.godot/imported/fox_bark2.png-da224d3cdd5651000c8fb28c04bfe0da.ctex"
+uid="uid://d0y3tes6b34pf"
+path="res://.godot/imported/barrelpart.png-4986eed35b06406b53bdd4b640b0b9ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/fox/fox_bark2.png"
-dest_files=["res://.godot/imported/fox_bark2.png-da224d3cdd5651000c8fb28c04bfe0da.ctex"]
+source_file="res://images/interface/barrelpart.png"
+dest_files=["res://.godot/imported/barrelpart.png-4986eed35b06406b53bdd4b640b0b9ea.ctex"]
 
 [params]
 

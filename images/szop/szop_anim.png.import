@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgcbey2w3qarf"
-path="res://.godot/imported/controls bigger.png-f63f5f95448dccb5f319620bc8a3c723.ctex"
+uid="uid://c7kg6wif41i56"
+path="res://.godot/imported/szop_anim.png-e94e7d3fd7e4c9fc6f0b5218bc043d6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/controls bigger.png"
-dest_files=["res://.godot/imported/controls bigger.png-f63f5f95448dccb5f319620bc8a3c723.ctex"]
+source_file="res://images/szop/szop_anim.png"
+dest_files=["res://.godot/imported/szop_anim.png-e94e7d3fd7e4c9fc6f0b5218bc043d6f.ctex"]
 
 [params]
 

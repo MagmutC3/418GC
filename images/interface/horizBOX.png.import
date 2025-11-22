@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ykx3b2yld7kg"
-path="res://.godot/imported/Splash screen.png-c7c6869bc1f0befcc506f2c3cddc3de4.ctex"
+uid="uid://drf8lrginuuvf"
+path="res://.godot/imported/horizBOX.png-a1719ce37657906bf3fee0eaeb3fff5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Splash screen.png"
-dest_files=["res://.godot/imported/Splash screen.png-c7c6869bc1f0befcc506f2c3cddc3de4.ctex"]
+source_file="res://images/interface/horizBOX.png"
+dest_files=["res://.godot/imported/horizBOX.png-a1719ce37657906bf3fee0eaeb3fff5d.ctex"]
 
 [params]
 

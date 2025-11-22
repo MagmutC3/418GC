@@ -7,11 +7,13 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	button.show()
 	label.hide()
+	$AnimatedSprite2D.frame = 1
 
 
 func _on_body_exited(body: Node2D) -> void:
 	button.hide()
 	label.show()
+	$AnimatedSprite2D.frame = 0
 	
 
 func _on_button_pressed() -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmb6smidodtio"
-path="res://.godot/imported/button main menu.png-bc3f600aed929be713fb6354447fcd82.ctex"
+uid="uid://di2wvnaitqm3b"
+path="res://.godot/imported/magpart.png-54a092935cdd0296cbe16d8804dbecaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/button main menu.png"
-dest_files=["res://.godot/imported/button main menu.png-bc3f600aed929be713fb6354447fcd82.ctex"]
+source_file="res://images/interface/magpart.png"
+dest_files=["res://.godot/imported/magpart.png-54a092935cdd0296cbe16d8804dbecaa.ctex"]
 
 [params]
 

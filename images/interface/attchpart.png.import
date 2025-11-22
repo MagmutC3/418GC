@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1l4fabqcuwh7"
-path="res://.godot/imported/fox sit.png-8f2eaffee5ca258d67673ec3ec514a18.ctex"
+uid="uid://j1s1es7fvciu"
+path="res://.godot/imported/attchpart.png-e54a2c3963e399c2bf4861cfd3b85bd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/fox/fox sit.png"
-dest_files=["res://.godot/imported/fox sit.png-8f2eaffee5ca258d67673ec3ec514a18.ctex"]
+source_file="res://images/interface/attchpart.png"
+dest_files=["res://.godot/imported/attchpart.png-e54a2c3963e399c2bf4861cfd3b85bd2.ctex"]
 
 [params]
 

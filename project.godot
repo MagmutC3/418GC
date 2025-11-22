@@ -14,12 +14,10 @@ warnings/check_invalid_track_paths=false
 
 [application]
 
-config/name="Gamejam: Nozomu template"
+config/name="Gamejam: Trash Metal"
 config/version="1.0"
 run/main_scene="uid://dg0io0m1wcmd7"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="res://Splash screen.png"
-config/icon="res://icon.png"
 
 [autoload]
 

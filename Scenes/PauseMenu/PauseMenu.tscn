@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1tqw0hrlac5g"]
+[gd_scene load_steps=13 format=3 uid="uid://c1tqw0hrlac5g"]
 
 [ext_resource type="Theme" uid="uid://dhvsei0a7jp3j" path="res://GlobalTheme.tres" id="1_cny2t"]
 [ext_resource type="Script" uid="uid://3nlu8vj8im1i" path="res://Scenes/PauseMenu/pause_menu.gd" id="2_hi1ku"]
+[ext_resource type="VideoStream" uid="uid://cxk1lcaqjij0x" path="res://images/interface/cottoncandy.ogv" id="3_blrd7"]
+[ext_resource type="Texture2D" uid="uid://oun2ubeh023h" path="res://images/interface/BOX.png" id="4_82qyg"]
+[ext_resource type="Texture2D" uid="uid://nqtswnk7q4tm" path="res://images/interface/reumeBUTTON.png" id="4_ifvnd"]
 [ext_resource type="FontFile" uid="uid://d05yajp3iubii" path="res://fonts/SpaceGrotesk-Bold.ttf" id="4_r07j0"]
+[ext_resource type="Texture2D" uid="uid://c2gyyjdd5xd0g" path="res://images/interface/menuexitBUTTON.png" id="5_456hk"]
 
 [sub_resource type="Animation" id="Animation_rhvpn"]
 length = 0.001
@@ -33,7 +37,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:modulate")
+tracks/2/path = NodePath("AspectRatioContainer/Shadow:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -74,7 +78,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:modulate")
+tracks/2/path = NodePath("AspectRatioContainer/Shadow:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -108,20 +112,28 @@ grow_vertical = 2
 theme = ExtResource("1_cny2t")
 script = ExtResource("2_hi1ku")
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 9.0
+offset_bottom = 10.0
+
+[node name="Shadow" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+process_mode = 2
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("3_blrd7")
+loop = true
+metadata/_edit_use_anchors_ = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_pa7jw")
 }
-
-[node name="Shadow" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(0, 0, 0, 0.752941)
 
 [node name="CardControl" type="Control" parent="."]
 layout_mode = 1
@@ -150,7 +162,7 @@ theme = ExtResource("1_cny2t")
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("4_r07j0")
 theme_override_font_sizes/font_size = 80
-text = "NAZWA GRY"
+text = "TRASH METAL"
 horizontal_alignment = 1
 
 [node name="ExtraText" type="Label" parent="CardControl/Card"]
@@ -165,52 +177,55 @@ theme_override_font_sizes/font_size = 48
 text = "Control Scheme"
 horizontal_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="CardControl/Card"]
+[node name="ResumeButton" type="TextureButton" parent="CardControl/Card"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
-offset_top = 100.0
-offset_right = 566.0
+offset_left = 109.0
+offset_top = 77.0
+offset_right = 475.0
 offset_bottom = 196.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
 shortcut = SubResource("Shortcut_ui17c")
 shortcut_in_tooltip = false
-text = "Resume
-"
+texture_normal = ExtResource("4_ifvnd")
+stretch_mode = 0
 
-[node name="MainMenuButton" type="Button" parent="CardControl/Card"]
+[node name="MainMenuButton" type="TextureButton" parent="CardControl/Card"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 200.0
+offset_left = 109.0
 offset_top = 220.0
-offset_right = 566.0
-offset_bottom = 316.0
+offset_right = 475.0
+offset_bottom = 343.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
 shortcut = SubResource("Shortcut_ui17c")
 shortcut_in_tooltip = false
-text = "Main Menu
-"
+texture_normal = ExtResource("5_456hk")
+stretch_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="CardControl/Card"]
+[node name="ColorRect2" type="TextureRect" parent="CardControl/Card"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 1183.0
 offset_top = 163.0
 offset_right = 1533.0
 offset_bottom = 796.0
-color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+texture = ExtResource("4_82qyg")
 
-[node name="Label" type="Label" parent="CardControl/Card/ColorRect"]
+[node name="Label" type="Label" parent="CardControl/Card/ColorRect2"]
 layout_mode = 0
 offset_right = 350.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
-text = "Controls go here"
+offset_bottom = 621.0
+theme_override_colors/font_color = Color(0.2784314, 0.1764706, 0.23529412, 1)
+text = "UP: W
+LEFT: A
+RIGHT: D
+DOWN: S
+SHOOT: MOUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CardControl/Card/MainMenuButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CardControl/Card/ResumeButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CardControl/Card/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CardControl/Card/MainMenuButton" to="." method="_on_exit_button_pressed"]

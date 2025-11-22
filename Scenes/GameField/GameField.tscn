@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu3p0gem72gkj"]
+[gd_scene load_steps=13 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
 [ext_resource type="Texture2D" uid="uid://beom4bb00sjd7" path="res://images/teren.png" id="2_7ocx6"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b8icd7nvpfair" path="res://Objects/Wall/Wall.tscn" id="3_8mfdk"]
 [ext_resource type="PackedScene" uid="uid://0p26cuq3mpnf" path="res://Objects/WorkshopPopup/WorkshopPopup.tscn" id="4_35sir"]
 [ext_resource type="PackedScene" uid="uid://dho5ccwrco3qp" path="res://Objects/Spawner/Spawner.tscn" id="5_eadpp"]
-[ext_resource type="Script" uid="uid://b5ou3sgknxmye" path="res://Objects/Spawner/spawner.gd" id="6_ejngd"]
 [ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemies/SmallRubbish.tscn" id="6_o5okw"]
 [ext_resource type="PackedScene" uid="uid://dychwkliyuwvd" path="res://Objects/Enemies/GigaRubbish.tscn" id="8_s7lvq"]
 
@@ -20,12 +19,13 @@ size = Vector2(4104.25, 114.75)
 size = Vector2(738, 154)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o5okw"]
-vertices = PackedVector2Array(3492.9688, 1856.9688, -287.9297, 1848.0234, -274.0625, -219.0625, 3488.0234, -241.92969)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-284, -229, -298, 1858, 3503, 1867, 3498, -252)])
+vertices = PackedVector2Array(2086.8438, 1621.0625, 2091.1563, 1346.1016, 2650.8984, 1174, 2960.1016, 1174, 3492.9688, 1856.9688, 2084.7813, 866.96875, 1194.3438, 1336.8984, 432.03906, 1168.6563, 1204.9609, 870.03906, 3488.0234, -241.92969, 2950.8984, 280.85156, -274.0625, -219.0625, 2660.1016, 285.14844, 2091.2188, 572.90625, 1206.0391, 581.09375, 427.95313, 268, 166.1875, 268, -287.9297, 1848.0234, 148.79688, 1178.3516, 1184.6484, 1615.9375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 2, 1, 6, 7, 8), PackedInt32Array(9, 4, 3, 10), PackedInt32Array(11, 9, 10, 12), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(13, 12, 2, 5), PackedInt32Array(8, 7, 15, 14), PackedInt32Array(11, 15, 16), PackedInt32Array(17, 11, 16, 18), PackedInt32Array(7, 6, 19, 17, 18), PackedInt32Array(0, 4, 17, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-284, -229, -298, 1858, 3503, 1867, 3498, -252), PackedVector2Array(176, 278, 418, 278, 422, 1159, 159, 1168), PackedVector2Array(1216, 591, 2081, 583, 2075, 857, 1215, 860), PackedVector2Array(1204, 1347, 2081, 1356, 2077, 1611, 1195, 1606), PackedVector2Array(2670, 295, 2941, 291, 2950, 1164, 2661, 1164)])
 
 [node name="GameField" type="Node2D" groups=["GAME_FIELD"]]
 script = ExtResource("1_3gtc0")
+enemy_spawners = [NodePath("EnemySpawner"), NodePath("EnemySpawner2"), NodePath("EnemySpawner3")]
 
 [node name="BG" type="TextureRect" parent="."]
 z_index = -10
@@ -47,12 +47,6 @@ collision_mask = 255
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(-72.5, 1066.5)
-shape = SubResource("RectangleShape2D_8mfdk")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(100, 100)
-rotation = -2.867576
-scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_8mfdk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]
@@ -90,20 +84,29 @@ position = Vector2(1380, 688)
 entity = [ExtResource("2_l1733")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_eadpp")]
-position = Vector2(2606, 406)
+position = Vector2(200, 1000)
 entity = [ExtResource("6_o5okw"), ExtResource("8_s7lvq")]
 quantity = 5
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="EnemySpawner2" parent="." instance=ExtResource("5_eadpp")]
+position = Vector2(3550, 1000)
+entity = [ExtResource("6_o5okw"), ExtResource("8_s7lvq")]
+quantity = 5
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("5_eadpp")]
+position = Vector2(1940, 2000)
+entity = [ExtResource("6_o5okw"), ExtResource("8_s7lvq")]
+quantity = 5
+
+[node name="SpawnTrigger" type="Area2D" parent="."]
 position = Vector2(1608, 758)
 collision_layer = 2
-script = ExtResource("6_ejngd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnTrigger"]
 position = Vector2(359, 67)
 shape = SubResource("RectangleShape2D_eadpp")
 
-[node name="Label" type="Label" parent="Area2D"]
+[node name="Label" type="Label" parent="SpawnTrigger"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 90
@@ -113,4 +116,4 @@ text = "Spawn enemies"
 position = Vector2(308, 271)
 navigation_polygon = SubResource("NavigationPolygon_o5okw")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SpawnTrigger" to="." method="_on_area_2d_body_entered"]

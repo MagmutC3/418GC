@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b1lh8orm3ygr8" path="res://Objects/Enemies/enemy_rubbish_giga.gd" id="1_14e5n"]
 [ext_resource type="Texture2D" uid="uid://45qmwcnbocb4" path="res://images/enemies/gigaworek.png" id="2_14e5n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_711mf"]
-size = Vector2(129, 124)
+[sub_resource type="CircleShape2D" id="CircleShape2D_14e5n"]
+radius = 50.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ifft"]
 atlas = ExtResource("2_14e5n")
@@ -64,7 +64,7 @@ health = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -4)
-shape = SubResource("RectangleShape2D_711mf")
+shape = SubResource("CircleShape2D_14e5n")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -73,3 +73,4 @@ scale = Vector2(5.21875, 5.119345)
 sprite_frames = SubResource("SpriteFrames_n0lrt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true

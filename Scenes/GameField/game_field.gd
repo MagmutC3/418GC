@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player_spawner: Node2D = $PlayerSpawner
-@onready var enemy_spawner: Node2D = $EnemySpawner
+@export var enemy_spawners = []
 
 
 func _ready():
@@ -14,4 +14,6 @@ func _ready():
 	get_tree().call_group("MAIN_CHARACTER", "activate")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	enemy_spawner.call_deferred("spawn_enemy")
+	for spawner in enemy_spawners:
+		print("a")
+		get_node(spawner).call_deferred("spawn_enemy")

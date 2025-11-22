@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu3p0gem72gkj"]
+[gd_scene load_steps=13 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
 [ext_resource type="Texture2D" uid="uid://beom4bb00sjd7" path="res://images/teren.png" id="2_7ocx6"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dho5ccwrco3qp" path="res://Objects/Spawner/Spawner.tscn" id="5_eadpp"]
 [ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemies/SmallRubbish.tscn" id="6_o5okw"]
 [ext_resource type="PackedScene" uid="uid://dychwkliyuwvd" path="res://Objects/Enemies/GigaRubbish.tscn" id="8_s7lvq"]
-[ext_resource type="Script" uid="uid://rdl3b0jis2vp" path="res://Scenes/GameField/healthbar.gd" id="9_s7lvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mfdk"]
 size = Vector2(125, 2281)
@@ -116,19 +115,5 @@ text = "Spawn enemies"
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(308, 271)
 navigation_polygon = SubResource("NavigationPolygon_o5okw")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-self_modulate = Color(1, 0, 0, 1)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -679.0
-offset_right = 1.0
-offset_bottom = 61.0
-grow_horizontal = 0
-show_percentage = false
-script = ExtResource("9_s7lvq")
 
 [connection signal="body_entered" from="SpawnTrigger" to="." method="_on_area_2d_body_entered"]

@@ -1,14 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg7p1so24iya4"]
+[gd_scene load_steps=11 format=3 uid="uid://dg7p1so24iya4"]
 
 [ext_resource type="Theme" uid="uid://dhvsei0a7jp3j" path="res://GlobalTheme.tres" id="1_j05i3"]
 [ext_resource type="Script" uid="uid://cheoqdbh6ga8g" path="res://Scenes/ResetSave/reset_save.gd" id="1_r0y5w"]
 [ext_resource type="FontFile" uid="uid://d05yajp3iubii" path="res://fonts/SpaceGrotesk-Bold.ttf" id="2_r0y5w"]
+[ext_resource type="Texture2D" uid="uid://4eybmh3oaq4y" path="res://images/interface/resetBUTTON.png" id="4_qobfu"]
+[ext_resource type="Texture2D" uid="uid://84evs8mnxc5d" path="res://images/interface/nahButton.png" id="5_p0g45"]
+[ext_resource type="Texture2D" uid="uid://cst5l3nikk368" path="res://images/interface/aeugh.png" id="6_hl144"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_dwmcf"]
 action = &"ui_accept"
 
-[sub_resource type="Shortcut" id="Shortcut_6mbc3"]
+[sub_resource type="Shortcut" id="Shortcut_p0g45"]
 events = [SubResource("InputEventAction_dwmcf")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_hl144"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_6mbc3"]
+events = [SubResource("InputEventAction_hl144")]
 
 [node name="ResetSave" type="Control"]
 layout_mode = 3
@@ -18,6 +27,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r0y5w")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.7529412)
+
+[node name="TextureRect" type="ParallaxBackground" parent="Shadow"]
+scroll_ignore_camera_zoom = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="Parallax2D" parent="Shadow/TextureRect"]
+texture_filter = 1
+repeat_size = Vector2(1483.87, 868.095)
+autoscroll = Vector2(50, 20)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Shadow/TextureRect/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 1993.0
+offset_bottom = 1125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_hl144")
+metadata/_edit_use_anchors_ = true
 
 [node name="CardControl" type="Control" parent="."]
 layout_mode = 1
@@ -29,10 +71,10 @@ grow_vertical = 2
 
 [node name="Card" type="TextureRect" parent="CardControl"]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 109.0
-offset_right = 1780.0
-offset_bottom = 973.0
+offset_left = 82.0
+offset_top = 140.0
+offset_right = 1731.0
+offset_bottom = 1004.0
 expand_mode = 1
 stretch_mode = 5
 
@@ -50,43 +92,31 @@ theme_override_font_sizes/font_size = 80
 text = "DO YOU WANT TO RESET THE GAME?"
 horizontal_alignment = 1
 
-[node name="ExtraText" type="Label" parent="CardControl/Card"]
+[node name="ResetButton" type="TextureButton" parent="CardControl/Card"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 1173.0
-offset_top = 100.0
-offset_right = 1541.0
-offset_bottom = 206.0
-theme = ExtResource("1_j05i3")
-theme_override_font_sizes/font_size = 48
-text = "Control Scheme"
-horizontal_alignment = 1
-
-[node name="ResetButton" type="Button" parent="CardControl/Card"]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 400.0
-offset_right = 666.0
-offset_bottom = 496.0
+offset_left = 350.0
+offset_top = 390.0
+offset_right = 729.0
+offset_bottom = 506.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 48
+shortcut = SubResource("Shortcut_p0g45")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_qobfu")
+stretch_mode = 0
+
+[node name="CancelButton" type="TextureButton" parent="CardControl/Card"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 918.0
+offset_top = 390.0
+offset_right = 1275.2195
+offset_bottom = 506.0
+mouse_default_cursor_shape = 2
 shortcut = SubResource("Shortcut_6mbc3")
 shortcut_in_tooltip = false
-text = "Reset"
-
-[node name="CancelButton" type="Button" parent="CardControl/Card"]
-layout_mode = 0
-offset_left = 897.0
-offset_top = 400.0
-offset_right = 1263.0
-offset_bottom = 496.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 48
-shortcut = SubResource("Shortcut_6mbc3")
-shortcut_in_tooltip = false
-text = "Cancel
-"
+texture_normal = ExtResource("5_p0g45")
+stretch_mode = 0
 
 [connection signal="pressed" from="CardControl/Card/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="CardControl/Card/CancelButton" to="." method="_on_cancel_button_pressed"]

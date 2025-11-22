@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://di51071gnb1ro"]
+[gd_scene load_steps=9 format=3 uid="uid://di51071gnb1ro"]
 
 [ext_resource type="Script" uid="uid://ccepuxa4uksxv" path="res://Objects/Enemies/enemy_rubbish_small.gd" id="1_s4hkw"]
 [ext_resource type="Texture2D" uid="uid://g4qt1nnr4hh5" path="res://images/enemies/worek_zwykly.png" id="3_106yf"]
-[ext_resource type="Script" uid="uid://cxbcgso8ai2uk" path="res://Objects/Enemies/hurtbox.gd" id="3_nhx5i"]
-[ext_resource type="Script" uid="uid://cbdbv6ua2olsr" path="res://Objects/Enemies/enemy_healthbar.gd" id="4_s2h2v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tavwd"]
 radius = 35.0
@@ -49,6 +47,7 @@ animations = [{
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_s4hkw")
+health = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5)
@@ -61,25 +60,4 @@ scale = Vector2(5.21875, 5.119345)
 sprite_frames = SubResource("SpriteFrames_n0lrt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
-[node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("3_nhx5i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(1, -5)
-shape = SubResource("CapsuleShape2D_tavwd")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-self_modulate = Color(1, 0, 0, 1)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -79.0
-offset_top = -99.0
-offset_right = 79.0
-offset_bottom = -77.0
-grow_horizontal = 0
-show_percentage = false
-script = ExtResource("4_s2h2v")
-
-[connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_body_entered"]
+debug_enabled = true

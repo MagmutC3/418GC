@@ -63,8 +63,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x11lv"]
-size = Vector2(132, 69)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3b0tj"]
+radius = 49.002552
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sav76"]
 streams_count = 3
@@ -93,9 +93,8 @@ sprite_frames = SubResource("SpriteFrames_twgt0")
 animation = &"sit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, 4.5)
-shape = SubResource("RectangleShape2D_x11lv")
+shape = SubResource("CircleShape2D_3b0tj")
 
 [node name="BarkSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

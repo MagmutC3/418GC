@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bu3p0gem72gkj" path="res://Scenes/GameField/GameField.tscn" id="1_pemxr"]
 [ext_resource type="PackedScene" uid="uid://mfaag4dkpa2x" path="res://Scenes/UI/UI.tscn" id="2_b60ro"]
-[ext_resource type="PackedScene" uid="uid://bhdqb350icnjw" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="5_fwyhx"]
+[ext_resource type="PackedScene" uid="uid://c1tqw0hrlac5g" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="5_fwyhx"]
 [ext_resource type="Script" uid="uid://l6nqv0wdsrj0" path="res://Scenes/GameField/camera_2d.gd" id="5_lqj6m"]
 
 [node name="MainGame" type="Control"]

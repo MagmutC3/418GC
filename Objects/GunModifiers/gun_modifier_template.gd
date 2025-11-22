@@ -17,7 +17,7 @@ extends GunModifier
 #bullet effect
 	#add child to Bullet's instance
 
-func on_hit_example(hit):
+func on_hit_example(hit, _instance : Bullet):
 	print(hit)
 
 func scope_effect(_instance : Bullet):

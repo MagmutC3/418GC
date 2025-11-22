@@ -13,6 +13,6 @@ func _on_Bullet_body_entered(hit):
 	if hit.is_in_group("ENEMY"):
 		hit.take_damage(damage)
 
-	for effect in onHits:
-		effect.call(hit)
+		for effect in onHits:
+			effect.call(hit, self)
 	queue_free()

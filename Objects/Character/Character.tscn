@@ -136,7 +136,7 @@ stream_1/stream = ExtResource("11_3b0tj")
 stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_3btn0")
 
 [node name="MovementBehaviour" type="Node" parent="."]
@@ -191,36 +191,37 @@ script = ExtResource("14_7nuro")
 [node name="Scope" type="Node" parent="Weapon"]
 script = ExtResource("15_sav76")
 
-[node name="GunModifierTemplate" parent="Weapon/Scope" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Scope" instance=ExtResource("14_iouyi")]
 
 [node name="Barrel" type="Node" parent="Weapon"]
 script = ExtResource("16_670m3")
 
-[node name="GunModifierTemplate" parent="Weapon/Barrel" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Barrel" instance=ExtResource("14_iouyi")]
 
 [node name="Attachment" type="Node" parent="Weapon"]
 script = ExtResource("17_btp4e")
 
-[node name="GunModifierTemplate" parent="Weapon/Attachment" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Attachment" instance=ExtResource("14_iouyi")]
 
 [node name="Stock" type="Node" parent="Weapon"]
 script = ExtResource("14_670m3")
 
-[node name="GunModifierTemplate" parent="Weapon/Stock" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Stock" instance=ExtResource("14_iouyi")]
 
 [node name="Magazine" type="Node" parent="Weapon"]
 script = ExtResource("19_o7xpd")
 
-[node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Magazine" instance=ExtResource("14_iouyi")]
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
 
-[node name="GunModifierTemplate" parent="Weapon/Trigger" instance=ExtResource("18_8vdmj")]
+[node name="SpikeModifier" parent="Weapon/Trigger" instance=ExtResource("14_iouyi")]
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(100, 0)
 
-[node name="ActiveEffects" type="Node" parent="."]
+[node name="ActiveEffects" type="Node2D" parent="."]
 
 [node name="Bullets" type="Node" parent="."]
 

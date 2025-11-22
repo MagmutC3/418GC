@@ -1,14 +1,24 @@
-[gd_scene load_steps=24 format=3 uid="uid://rubpe83jcihs"]
+[gd_scene load_steps=34 format=3 uid="uid://rubpe83jcihs"]
 
 [ext_resource type="Script" uid="uid://ccw5xj3khfeb4" path="res://Objects/Character/character.gd" id="1_3btn0"]
 [ext_resource type="Script" uid="uid://l8x1lyakjk8h" path="res://Objects/Character/bark_behaviour.gd" id="2_8dr1w"]
 [ext_resource type="Script" uid="uid://cpdsvxpnjqrbf" path="res://Objects/Character/movement_behaviour.gd" id="3_parke"]
 [ext_resource type="Script" uid="uid://cs5wcgagx3fup" path="res://Objects/Character/animation_behaviour.gd" id="4_owoj8"]
 [ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/fox/szop_anim.png" id="5_8dr1w"]
+[ext_resource type="Script" uid="uid://q5jd8otjvcj1" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
+[ext_resource type="PackedScene" uid="uid://pqsjo278hyie" path="res://Objects/bullet.tscn" id="6_mo44t"]
 [ext_resource type="AudioStream" uid="uid://ph813d63f86c" path="res://sfx/fox_bark.mp3" id="9_alk0q"]
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
 [ext_resource type="AudioStream" uid="uid://cht4kgoy5465y" path="res://sfx/footstep_grass_001.ogg" id="11_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://c3c7cjm2af30g" path="res://sfx/footstep_grass_002.ogg" id="12_7nuro"]
+[ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://Scripts/Workshop/weapon.gd" id="14_7nuro"]
+[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/stock.gd" id="14_670m3"]
+[ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://Scripts/Workshop/scope.gd" id="15_sav76"]
+[ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://Scripts/Workshop/barrel.gd" id="16_670m3"]
+[ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://Scripts/Workshop/attachment.gd" id="17_btp4e"]
+[ext_resource type="PackedScene" uid="uid://c8l8nv4qt34w7" path="res://Objects/GunModifiers/gun_modifier_template.tscn" id="18_8vdmj"]
+[ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://Scripts/Workshop/magazine.gd" id="19_o7xpd"]
+[ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://Scripts/Workshop/trigger.gd" id="20_iouyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_parke"]
 atlas = ExtResource("5_8dr1w")
@@ -141,11 +151,17 @@ script = ExtResource("2_8dr1w")
 unique_name_in_owner = true
 script = ExtResource("4_owoj8")
 
+[node name="ShootingBehaviour" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_l6rph")
+bullet = ExtResource("6_mo44t")
+
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
+scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_twgt0")
-animation = &"sit"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0.75)
@@ -167,5 +183,42 @@ bus = &"SFX"
 unique_name_in_owner = true
 wait_time = 0.2
 one_shot = true
+
+[node name="Weapon" type="Node" parent="."]
+script = ExtResource("14_7nuro")
+
+[node name="Scope" type="Node" parent="Weapon"]
+script = ExtResource("15_sav76")
+
+[node name="GunModifierTemplate" parent="Weapon/Scope" instance=ExtResource("18_8vdmj")]
+
+[node name="Barrel" type="Node" parent="Weapon"]
+script = ExtResource("16_670m3")
+
+[node name="GunModifierTemplate" parent="Weapon/Barrel" instance=ExtResource("18_8vdmj")]
+
+[node name="Attachment" type="Node" parent="Weapon"]
+script = ExtResource("17_btp4e")
+
+[node name="GunModifierTemplate" parent="Weapon/Attachment" instance=ExtResource("18_8vdmj")]
+
+[node name="Stock" type="Node" parent="Weapon"]
+script = ExtResource("14_670m3")
+
+[node name="GunModifierTemplate" parent="Weapon/Stock" instance=ExtResource("18_8vdmj")]
+
+[node name="Magazine" type="Node" parent="Weapon"]
+script = ExtResource("19_o7xpd")
+
+[node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
+
+[node name="Trigger" type="Node" parent="Weapon"]
+script = ExtResource("20_iouyi")
+
+[node name="GunModifierTemplate" parent="Weapon/Trigger" instance=ExtResource("18_8vdmj")]
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+
+[node name="ActiveEffects" type="Node" parent="."]
 
 [connection signal="timeout" from="BarkTimeout" to="AnimationBehaviour" method="_on_bark_timeout"]

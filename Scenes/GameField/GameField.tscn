@@ -1,6 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
+[ext_resource type="Texture2D" uid="uid://beom4bb00sjd7" path="res://images/teren.png" id="2_7ocx6"]
 [ext_resource type="PackedScene" uid="uid://rubpe83jcihs" path="res://Objects/Character/Character.tscn" id="2_l1733"]
 [ext_resource type="PackedScene" uid="uid://b8icd7nvpfair" path="res://Objects/Wall/Wall.tscn" id="3_8mfdk"]
 [ext_resource type="PackedScene" uid="uid://0p26cuq3mpnf" path="res://Objects/WorkshopPopup/WorkshopPopup.tscn" id="4_35sir"]
@@ -25,8 +26,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-284, -229, -298, 1858,
 [node name="GameField" type="Node2D" groups=["GAME_FIELD"]]
 script = ExtResource("1_3gtc0")
 
-[node name="BG" type="ColorRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 z_index = -10
+texture_filter = 1
+texture_repeat = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +37,8 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.788235, 0.505882, 0.294118, 1)
+texture = ExtResource("2_7ocx6")
+stretch_mode = 1
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 collision_layer = 255
@@ -42,6 +46,12 @@ collision_mask = 255
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(-72.5, 1066.5)
+shape = SubResource("RectangleShape2D_8mfdk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(100, 100)
+rotation = -2.867576
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_8mfdk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]

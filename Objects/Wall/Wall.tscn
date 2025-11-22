@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8icd7nvpfair"]
 
-[ext_resource type="Texture2D" uid="uid://bj17qf5mwkp81" path="res://images/interface/button main menu - pressed.png" id="1_bkcia"]
+[ext_resource type="Texture2D" uid="uid://bir6rbon28qro" path="res://images/murDlugi.png" id="1_bkcia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcia"]
 size = Vector2(188, 793)
@@ -8,7 +8,10 @@ size = Vector2(188, 793)
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.1789513, 1.1789703)
 rotation = 1.5707964
+scale = Vector2(6.176433, 5.789582)
 texture = ExtResource("1_bkcia")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

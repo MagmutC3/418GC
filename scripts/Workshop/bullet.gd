@@ -14,5 +14,5 @@ func _on_Bullet_body_entered(hit):
 		#for effect in onHits:
 			#call(effect)
 	for effect in onHits:
-		call(effect)
+		effect.call(hit)
 	queue_free()

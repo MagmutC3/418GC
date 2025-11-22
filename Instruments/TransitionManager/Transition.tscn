@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvuxqvy3ctanw"]
+[gd_scene load_steps=7 format=3 uid="uid://cvuxqvy3ctanw"]
 
 [ext_resource type="Script" uid="uid://u4v581k8s5oh" path="res://Instruments/TransitionManager/Transition.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://df1opmyp7qa8u" path="res://Objects/GunModifiers/spike_gun_modifier.tscn" id="2_6riut"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "DISSOLVE"
@@ -46,6 +47,7 @@ _data = {
 [node name="SceneTransition" type="CanvasLayer"]
 layer = 99
 script = ExtResource("1")
+startingGear = ExtResource("2_6riut")
 
 [node name="Dissolve" type="ColorRect" parent="."]
 anchors_preset = 15

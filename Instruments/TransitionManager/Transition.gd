@@ -6,6 +6,10 @@ extends CanvasLayer
 
 const IDLE_TIME = 0.1
 
+@export var startingGear : PackedScene
+
+@onready var selectedLoadout = [startingGear,startingGear,startingGear,startingGear,startingGear,startingGear]
+
 func _ready():
 	dissolve_at_once()
 

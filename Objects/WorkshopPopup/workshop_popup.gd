@@ -17,5 +17,5 @@ func _on_body_exited(body: Node2D) -> void:
 	
 
 func _on_button_pressed() -> void:
-	pass # TODO: display workshop scene
-	#TransitionManager.change_scene()
+	#pass # TODO: display workshop scene
+	TransitionManager.change_scene("res://Scenes/WorkshopScene/WorkshopScene.tscn")

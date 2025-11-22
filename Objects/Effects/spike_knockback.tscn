@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bafpelpmbv1qc"]
+
+[ext_resource type="Script" uid="uid://c8gxmiujvt17m" path="res://Objects/Effects/spike_knockback.gd" id="1_fe4ft"]
+[ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="2_ya00e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ox4a"]
+size = Vector2(200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjtia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ya00e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpikeKnockback" type="ShapeCast2D"]
+shape = SubResource("RectangleShape2D_7ox4a")
+target_position = Vector2(640, 0)
+collision_mask = 4
+script = ExtResource("1_fe4ft")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(256, 0)
+scale = Vector2(5, 1)
+sprite_frames = SubResource("SpriteFrames_gjtia")

@@ -23,7 +23,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-StateManager="*res://scripts/StateManager.gd"
+StateManager="*res://Scripts/StateManager.gd"
 AudioManager="*res://Instruments/AudioManager/Audio.tscn"
 TransitionManager="*res://Instruments/TransitionManager/Transition.tscn"
 

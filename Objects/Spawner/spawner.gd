@@ -7,4 +7,4 @@ func _spawn() -> void:
 	for i in range(quantity):
 		var e = entity.instantiate()
 		owner.add_child(e)
-		e.global_position = $".".global_position
+		e.global_position = self.global_position

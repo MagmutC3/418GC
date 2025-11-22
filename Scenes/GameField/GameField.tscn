@@ -41,6 +41,12 @@ stretch_mode = 1
 position = Vector2(-72.5, 1066.5)
 shape = SubResource("RectangleShape2D_8mfdk")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(100, 100)
+rotation = -2.867576
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_8mfdk")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(3914, 1090)
 shape = SubResource("RectangleShape2D_8mfdk")

@@ -137,7 +137,11 @@ stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(8, 8)
+=======
+collision_layer = 2
+>>>>>>> 5ed7c61 (effect stacking system)
 =======
 collision_layer = 2
 >>>>>>> 5ed7c61 (effect stacking system)
@@ -215,9 +219,13 @@ script = ExtResource("19_o7xpd")
 
 [node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 effect = ExtResource("23_irryd")
 =======
 >>>>>>> d63547f (wip)
+=======
+effect = ExtResource("23_irryd")
+>>>>>>> 5ed7c61 (effect stacking system)
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
@@ -228,8 +236,13 @@ script = ExtResource("20_iouyi")
 position = Vector2(50, 0)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="ActiveEffects" type="Node" parent="."]
 
 =======
 >>>>>>> d63547f (wip)
+=======
+[node name="ActiveEffects" type="Node" parent="."]
+
+>>>>>>> 5ed7c61 (effect stacking system)
 [connection signal="timeout" from="BarkTimeout" to="AnimationBehaviour" method="_on_bark_timeout"]

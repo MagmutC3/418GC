@@ -5,7 +5,7 @@ extends Node2D
 
 
 func _ready():
-	player_spawner._spawn()
+	player_spawner.spawn_player()
 	await get_tree().create_timer(1.5).timeout
 	# this is just to demonstrate the usage of groups
 	# in this specific case we can access the child node Fox,
@@ -14,4 +14,4 @@ func _ready():
 	get_tree().call_group("MAIN_CHARACTER", "activate")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	enemy_spawner.call_deferred("_spawn")
+	enemy_spawner.call_deferred("spawn_enemy")

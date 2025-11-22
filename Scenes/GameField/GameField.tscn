@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu3p0gem72gkj"]
+[gd_scene load_steps=12 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
 [ext_resource type="PackedScene" uid="uid://rubpe83jcihs" path="res://Objects/Character/Character.tscn" id="2_l1733"]
@@ -17,6 +17,11 @@ size = Vector2(4104.25, 114.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eadpp"]
 size = Vector2(738, 154)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o5okw"]
+vertices = PackedVector2Array(3492.9688, 1856.9688, -287.9297, 1848.0234, -274.0625, -219.0625, 3488.0234, -241.92969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-284, -229, -298, 1858, 3503, 1867, 3498, -252)])
+
 [node name="GameField" type="Node2D" groups=["GAME_FIELD"]]
 script = ExtResource("1_3gtc0")
 
@@ -32,6 +37,8 @@ grow_vertical = 2
 color = Color(0.788235, 0.505882, 0.294118, 1)
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
+collision_layer = 255
+collision_mask = 255
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(-72.5, 1066.5)
@@ -65,6 +72,7 @@ rotation = 1.5707964
 
 [node name="WorkshopArea" parent="." instance=ExtResource("4_35sir")]
 position = Vector2(1941, 90)
+collision_layer = 2
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("5_eadpp")]
 position = Vector2(1380, 688)
@@ -77,6 +85,7 @@ quantity = 5
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1608, 758)
+collision_layer = 2
 script = ExtResource("6_ejngd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -88,5 +97,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 90
 text = "Spawn enemies"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(308, 271)
+navigation_polygon = SubResource("NavigationPolygon_o5okw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

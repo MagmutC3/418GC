@@ -6,6 +6,7 @@
 size = Vector2(188, 793)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964

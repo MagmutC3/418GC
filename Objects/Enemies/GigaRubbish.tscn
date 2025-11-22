@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dychwkliyuwvd"]
+[gd_scene load_steps=14 format=3 uid="uid://dychwkliyuwvd"]
 
 [ext_resource type="Script" uid="uid://b1lh8orm3ygr8" path="res://Objects/Enemies/enemy_rubbish_giga.gd" id="1_14e5n"]
 [ext_resource type="Texture2D" uid="uid://45qmwcnbocb4" path="res://images/enemies/gigaworek.png" id="2_14e5n"]
+[ext_resource type="Script" uid="uid://cxbcgso8ai2uk" path="res://Objects/Enemies/hurtbox.gd" id="3_5ifft"]
+[ext_resource type="Script" uid="uid://cbdbv6ua2olsr" path="res://Objects/Enemies/enemy_healthbar.gd" id="4_3j30x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14e5n"]
 radius = 50.0
@@ -56,11 +58,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3j30x"]
+radius = 35.0
+height = 120.0
+
 [node name="GigaRubbish" type="CharacterBody2D" groups=["ENEMY"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_14e5n")
-health = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -4)
@@ -73,4 +78,25 @@ scale = Vector2(5.21875, 5.119345)
 sprite_frames = SubResource("SpriteFrames_n0lrt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_5ifft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(1, -5)
+shape = SubResource("CapsuleShape2D_3j30x")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = -99.0
+offset_right = 80.0
+offset_bottom = -77.0
+grow_horizontal = 0
+show_percentage = false
+script = ExtResource("4_3j30x")
+
+[connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_body_entered"]

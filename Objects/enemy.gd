@@ -24,7 +24,7 @@ func _ready() -> void:
 	dotTimer.timeout.connect(dot)
 
 func dot():
-	take_damage(health*0.05)
+	take_damage(current_health*0.05)
 	
 	if dotDuration.wait_time > 0:
 		dotTimer.start(1)

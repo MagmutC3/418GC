@@ -21,7 +21,7 @@ func scopeEffect(_instance : Bullet):
 	_instance.look_at(get_global_mouse_position())
 
 func scope_effect(_instance : Bullet):
-	await get_tree().create_timer(0.5).timeout
+	#await get_tree().create_timer(0.5).timeout
 	_instance.onProcess.append(scopeEffect)
 	pass
 

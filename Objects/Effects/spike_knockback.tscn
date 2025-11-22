@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bafpelpmbv1qc"]
 
 [ext_resource type="Script" uid="uid://c8gxmiujvt17m" path="res://Objects/Effects/spike_knockback.gd" id="1_fe4ft"]
-[ext_resource type="Texture2D" uid="uid://bghlf5yi20pxk" path="res://icon.svg" id="2_ya00e"]
+[ext_resource type="Texture2D" uid="uid://0tq73efav55j" path="res://images/projectile.png" id="2_fe4ft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ox4a"]
 size = Vector2(200, 200)
@@ -10,7 +10,7 @@ size = Vector2(200, 200)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ya00e")
+"texture": ExtResource("2_fe4ft")
 }],
 "loop": true,
 "name": &"default",
@@ -25,5 +25,6 @@ script = ExtResource("1_fe4ft")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(256, 0)
+rotation = 3.1415927
 scale = Vector2(5, 1)
 sprite_frames = SubResource("SpriteFrames_gjtia")

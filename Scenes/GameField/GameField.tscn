@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bu3p0gem72gkj"]
+[gd_scene load_steps=18 format=3 uid="uid://bu3p0gem72gkj"]
 
 [ext_resource type="Script" uid="uid://brt0swa1ff7u8" path="res://Scenes/GameField/game_field.gd" id="1_3gtc0"]
 [ext_resource type="Texture2D" uid="uid://beom4bb00sjd7" path="res://images/teren.png" id="2_7ocx6"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dumlvdb30602h" path="res://images/brama.png" id="5_s7lvq"]
 [ext_resource type="PackedScene" uid="uid://di51071gnb1ro" path="res://Objects/Enemies/SmallRubbish.tscn" id="6_o5okw"]
 [ext_resource type="PackedScene" uid="uid://dychwkliyuwvd" path="res://Objects/Enemies/GigaRubbish.tscn" id="8_s7lvq"]
-[ext_resource type="Script" uid="uid://rdl3b0jis2vp" path="res://Scenes/GameField/healthbar.gd" id="9_s7lvq"]
+[ext_resource type="Script" path="res://Scenes/GameField/healthbar.gd" id="9_s7lvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mfdk"]
 size = Vector2(125, 2281)

@@ -1,6 +1,9 @@
 extends Control
 
-
+@onready var attachment : Dictionary = {
+	0 : preload("res://Objects/GunModifiers/spike_gun_modifier.tscn"),
+	1 : preload("res://Objects/GunModifiers/kitchen_gun_modifier.tscn")
+}
 
 var barrel_choice: int
 var crosshair_choice: int
@@ -9,12 +12,18 @@ var stock_choice: int
 var magazine_choice: int
 var trigger_choice: int
 
+func setup_weapon():
+	TransitionManager.selectedLoadout = [attachment.get(barrel_choice),
+	attachment.get(crosshair_choice),
+	attachment.get(attachement_choice),
+	attachment.get(stock_choice),
+	attachment.get(magazine_choice),
+	attachment.get(trigger_choice)]
 
 func _on_return_button_pressed() -> void:
 	AudioManager.SFX.play_sfx("click")
 	
-	print(barrel_choice, crosshair_choice, attachement_choice, stock_choice, magazine_choice, trigger_choice)
-	
+	setup_weapon()
 	TransitionManager.change_scene("res://Scenes/MainGame/MainGame.tscn")
 
 func _on_barrel_choice_item_selected(index: int) -> void:

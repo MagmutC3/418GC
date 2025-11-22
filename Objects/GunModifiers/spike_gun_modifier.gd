@@ -47,7 +47,7 @@ func stock_effect(_instance : Bullet):
 	pass
 	
 func magazineEffect(hit, _instance : Bullet):
-	if hit.health <= 0:
+	if hit.current_health <= 0:
 		var e = _instance.duplicate()
 		_instance.add_sibling(e)
 		e.speed = _instance.speed

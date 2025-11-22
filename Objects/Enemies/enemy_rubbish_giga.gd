@@ -4,6 +4,7 @@ extends Enemy
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 var player: Node2D
 func _ready() -> void:
+	sprite.play("default")
 	# Find player through group
 	var players = get_tree().get_nodes_in_group("PLAYER")
 	if players.size() > 0:

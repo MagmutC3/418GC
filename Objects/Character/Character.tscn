@@ -1,34 +1,74 @@
-[gd_scene load_steps=28 format=3 uid="uid://rubpe83jcihs"]
+[gd_scene load_steps=34 format=3 uid="uid://rubpe83jcihs"]
 
 [ext_resource type="Script" uid="uid://ccw5xj3khfeb4" path="res://Objects/Character/character.gd" id="1_3btn0"]
-[ext_resource type="Texture2D" uid="uid://w48uhxhdhlh8" path="res://images/fox/fox_bark1.png" id="1_x11lv"]
-[ext_resource type="Texture2D" uid="uid://b1tyhwpwxfr5t" path="res://images/fox/fox_bark2.png" id="2_4o0tl"]
 [ext_resource type="Script" uid="uid://l8x1lyakjk8h" path="res://Objects/Character/bark_behaviour.gd" id="2_8dr1w"]
-[ext_resource type="Texture2D" uid="uid://v3xe551gvc8p" path="res://images/fox/fox1.png" id="3_lxxq2"]
 [ext_resource type="Script" uid="uid://cpdsvxpnjqrbf" path="res://Objects/Character/movement_behaviour.gd" id="3_parke"]
-[ext_resource type="Texture2D" uid="uid://8wiqcm4iaapn" path="res://images/fox/fox2.png" id="4_fajqi"]
 [ext_resource type="Script" uid="uid://cs5wcgagx3fup" path="res://Objects/Character/animation_behaviour.gd" id="4_owoj8"]
-[ext_resource type="Script" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
+[ext_resource type="Texture2D" uid="uid://c7kg6wif41i56" path="res://images/fox/szop_anim.png" id="5_8dr1w"]
+[ext_resource type="Script" uid="uid://q5jd8otjvcj1" path="res://Objects/Character/shooting_behaviour.gd" id="5_l6rph"]
 [ext_resource type="PackedScene" uid="uid://pqsjo278hyie" path="res://Objects/bullet.tscn" id="6_mo44t"]
 [ext_resource type="AudioStream" uid="uid://ph813d63f86c" path="res://sfx/fox_bark.mp3" id="9_alk0q"]
 [ext_resource type="AudioStream" uid="uid://b7cfswfxnhfun" path="res://sfx/footstep_grass_000.ogg" id="10_alk0q"]
 [ext_resource type="AudioStream" uid="uid://cht4kgoy5465y" path="res://sfx/footstep_grass_001.ogg" id="11_3b0tj"]
 [ext_resource type="AudioStream" uid="uid://c3c7cjm2af30g" path="res://sfx/footstep_grass_002.ogg" id="12_7nuro"]
 [ext_resource type="Script" uid="uid://dd20fpiffnssj" path="res://Scripts/Workshop/weapon.gd" id="14_7nuro"]
+[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/stock.gd" id="14_670m3"]
 [ext_resource type="Script" uid="uid://cxk2u1aqc3apa" path="res://Scripts/Workshop/scope.gd" id="15_sav76"]
 [ext_resource type="Script" uid="uid://btve01wakw6d6" path="res://Scripts/Workshop/barrel.gd" id="16_670m3"]
 [ext_resource type="Script" uid="uid://dn5ftyeh1rpfg" path="res://Scripts/Workshop/attachment.gd" id="17_btp4e"]
 [ext_resource type="PackedScene" uid="uid://c8l8nv4qt34w7" path="res://Objects/GunModifiers/gun_modifier_template.tscn" id="18_8vdmj"]
-[ext_resource type="Script" uid="uid://dtqqxa8m2kk5g" path="res://Scripts/Workshop/butt.gd" id="18_dq3o2"]
 [ext_resource type="Script" uid="uid://6q56cxspm45r" path="res://Scripts/Workshop/magazine.gd" id="19_o7xpd"]
 [ext_resource type="Script" uid="uid://dyagvnsq3k1k2" path="res://Scripts/Workshop/trigger.gd" id="20_iouyi"]
-[ext_resource type="PackedScene" uid="uid://bexypihhqifh4" path="res://Objects/Effects/example_constant_effect.tscn" id="23_irryd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_parke"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owoj8"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alk0q"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b0tj"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nuro"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sav76"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_670m3"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btp4e"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq3o2"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7xpd"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iouyi"]
+atlas = ExtResource("5_8dr1w")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_twgt0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x11lv")
+"texture": SubResource("AtlasTexture_parke")
 }],
 "loop": true,
 "name": &"bark_idle",
@@ -36,10 +76,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x11lv")
+"texture": SubResource("AtlasTexture_owoj8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_4o0tl")
+"texture": SubResource("AtlasTexture_alk0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b0tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nuro")
 }],
 "loop": true,
 "name": &"bark_run",
@@ -47,7 +93,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_lxxq2")
+"texture": SubResource("AtlasTexture_sav76")
 }],
 "loop": true,
 "name": &"idle",
@@ -55,10 +101,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_lxxq2")
+"texture": SubResource("AtlasTexture_670m3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fajqi")
+"texture": SubResource("AtlasTexture_btp4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq3o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7xpd")
 }],
 "loop": true,
 "name": &"run",
@@ -66,15 +118,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_3b0tj")
+"texture": SubResource("AtlasTexture_iouyi")
 }],
 "loop": true,
 "name": &"sit",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x11lv"]
-size = Vector2(132, 69)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3b0tj"]
+radius = 10.536395
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sav76"]
 streams_count = 3
@@ -83,7 +135,7 @@ stream_1/stream = ExtResource("11_3b0tj")
 stream_2/stream = ExtResource("12_7nuro")
 
 [node name="Character" type="CharacterBody2D" groups=["MAIN_CHARACTER"]]
-collision_layer = 2
+collision_layer = 128
 script = ExtResource("1_3btn0")
 
 [node name="MovementBehaviour" type="Node" parent="."]
@@ -105,13 +157,14 @@ bullet = ExtResource("6_mo44t")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_twgt0")
-animation = &"sit"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 4.5)
-shape = SubResource("RectangleShape2D_x11lv")
+position = Vector2(3, 0.75)
+shape = SubResource("CircleShape2D_3b0tj")
 
 [node name="BarkSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -148,16 +201,15 @@ script = ExtResource("17_btp4e")
 
 [node name="GunModifierTemplate" parent="Weapon/Attachment" instance=ExtResource("18_8vdmj")]
 
-[node name="Butt" type="Node" parent="Weapon"]
-script = ExtResource("18_dq3o2")
+[node name="Stock" type="Node" parent="Weapon"]
+script = ExtResource("14_670m3")
 
-[node name="GunModifierTemplate" parent="Weapon/Butt" instance=ExtResource("18_8vdmj")]
+[node name="GunModifierTemplate" parent="Weapon/Stock" instance=ExtResource("18_8vdmj")]
 
 [node name="Magazine" type="Node" parent="Weapon"]
 script = ExtResource("19_o7xpd")
 
 [node name="GunModifierTemplate" parent="Weapon/Magazine" instance=ExtResource("18_8vdmj")]
-effect = ExtResource("23_irryd")
 
 [node name="Trigger" type="Node" parent="Weapon"]
 script = ExtResource("20_iouyi")
@@ -165,7 +217,7 @@ script = ExtResource("20_iouyi")
 [node name="GunModifierTemplate" parent="Weapon/Trigger" instance=ExtResource("18_8vdmj")]
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(50, 0)
 
 [node name="ActiveEffects" type="Node" parent="."]
+
 [connection signal="timeout" from="BarkTimeout" to="AnimationBehaviour" method="_on_bark_timeout"]

@@ -41,7 +41,7 @@ func attachment_effect(_instance : Bullet):
 
 var constantEffectAdded = false
 @export var effect : PackedScene
-func butt_effect(_instance : Bullet):
+func stock_effect(_instance : Bullet):
 	#this is an example of a constant effect
 	if not constantEffectAdded:
 		var e = effect.instantiate()

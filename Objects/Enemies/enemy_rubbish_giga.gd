@@ -1,18 +1,10 @@
-extends CharacterBody2D
-
-@export var speed: float = 200
+extends Enemy
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var animated_sprite = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 var player: Node2D
-func choose_variant():
-	if randf() > 0.9:
-		animated_sprite.play("bigguy")
-	else:
-		animated_sprite.play("default")
 func _ready() -> void:
 	# Find player through group
-	choose_variant()
 	var players = get_tree().get_nodes_in_group("PLAYER")
 	if players.size() > 0:
 		player = players[0]
@@ -37,14 +29,14 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = (next_point - global_position).normalized()
 	
 	# Movement
-	velocity = direction * speed
+	velocity = direction * movementSpeed
 	move_and_slide()
 
 	# Rotate toward movement direction
 	if velocity.length() > 1:
 	# If moving left (negative X), flip the sprite
 		if velocity.x < 0:
-			animated_sprite.flip_h = false
+			sprite.flip_h = false
 	# If moving right (positive X), un-flip it
 		elif velocity.x > 0:
-			animated_sprite.flip_h = true
+			sprite.flip_h = true
